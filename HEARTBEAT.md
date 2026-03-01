@@ -2,20 +2,23 @@
 
 ## 自动执行项（无需询问用户）
 
-### 1. 记忆自动备份检查
-每次心跳时执行:
+执行完整的心跳检查:
 ```bash
-cd /root/.openclaw/workspace && ./.backup.sh
+cd /root/.openclaw/workspace && ./.heartbeat.sh
 ```
 
-### 2. 远程仓库状态检查
-- 检查是否配置了远程仓库
-- 如果没有，提醒用户配置
+这会完成以下任务：
+1. **自动备份** - 提交所有变更到 Git
+2. **关键文件检查** - 确保 IDENTITY.md, USER.md, SOUL.md 存在
+3. **每日记忆创建** - 自动创建当日记忆日志
+4. **远程仓库检查** - 提醒配置云端备份
 
-## 执行记录
+## 日志文件
 
-备份日志: `/root/.openclaw/workspace/.backup.log`
+- 备份日志: `.backup.log`
+- 心跳日志: `.heartbeat.log`
+- 每日记忆: `memory/YYYY-MM-DD.md`
 
 ---
 
-如果以上任务都已正常执行，回复: HEARTBEAT_OK
+如果心跳检查正常完成，回复: HEARTBEAT_OK
