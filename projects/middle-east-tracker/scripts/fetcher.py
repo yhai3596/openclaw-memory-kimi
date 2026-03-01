@@ -20,11 +20,11 @@ class NewsFetcher:
         # 配置
         self.config = {
             "fetch_interval": 600,  # 10分钟
-            "keywords": ["伊朗", "以色列", "美国", "中东", "哈梅内伊", "特朗普", "战争", "导弹", "袭击"],
+            "keywords": ["伊朗", "以色列", "美国", "中东", "哈梅内伊", "特朗普", "战争", "导弹", "袭击", "冲突", "军事"],
             "sources": {
                 "rss": [
-                    {"name": "新华社", "url": "http://www.xinhuanet.com/rss/world.xml", "enabled": True},
-                    {"name": "新华网", "url": "http://www.news.cn/rss/world.xml", "enabled": True},
+                    {"name": "BBC中文", "url": "http://feeds.bbci.co.uk/zhongwen/simp/rss.xml", "enabled": True},
+                    {"name": "路透中文网", "url": "https://cn.reuters.com/rssFeed/CNTopNews/", "enabled": True},
                     {"name": "21财经", "url": "https://m.21jingji.com/rss/world.xml", "enabled": True},
                 ],
                 "web": [

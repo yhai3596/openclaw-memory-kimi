@@ -1,0 +1,52 @@
+[
+  {
+    "id": "test001",
+    "timestamp": "2026-03-01T12:00:00+08:00",
+    "title": "伊朗导弹击中以军总参谋部",
+    "content": "据央视新闻援引伊朗方面1日消息，伊朗伊斯兰革命卫队导弹击中以军总参谋部。",
+    "source": "央视新闻",
+    "source_url": "https://m.21jingji.com/journal/240.html",
+    "category": "军事",
+    "verified": true
+  },
+  {
+    "id": "test002",
+    "timestamp": "2026-03-01T11:44:00+08:00",
+    "title": "伊朗对伊拉克北部美军基地发起袭击",
+    "content": "据新华社援引伊朗法尔斯通讯社1日报道，伊朗当天对伊拉克北部的一处美军基地发起袭击。",
+    "source": "新华社",
+    "source_url": "https://m.21jingji.com/journal/240.html",
+    "category": "军事",
+    "verified": true
+  },
+  {
+    "id": "test003",
+    "timestamp": "2026-03-01T11:12:00+08:00",
+    "title": "伊朗政府就哈梅内伊殉职发表声明",
+    "content": "伊朗政府就伊朗最高领袖哈梅内伊殉职发表声明说，必将以全部的力量和决心，让敌人付出惨痛的代价。",
+    "source": "新华社",
+    "source_url": "https://m.21jingji.com/journal/240.html",
+    "category": "政治",
+    "verified": true
+  },
+  {
+    "id": "test004",
+    "timestamp": "2026-03-01T10:22:00+08:00",
+    "title": "霍尔木兹海峡油轮运输陷入停滞",
+    "content": "根据国际油轮流量监测系统的实时数据显示，目前位于霍尔木兹海峡周边海域的油轮航行速度已普遍降至零。",
+    "source": "央视新闻",
+    "source_url": "https://m.21jingji.com/journal/240.html",
+    "category": "经济",
+    "verified": true
+  },
+  {
+    "id": "test005",
+    "timestamp": "2026-03-01T09:39:00+08:00",
+    "title": "伊朗一学校遭导弹袭击 已致64人死亡",
+    "content": "伊朗霍尔木兹甘省一所女子小学遭到以色列导弹袭击，遇难者人数增至64人，受伤人数达92人。",
+    "source": "央视新闻",
+    "source_url": "https://m.21jingji.com/journal/240.html",
+    "category": "人道",
+    "verified": true
+  }
+]
