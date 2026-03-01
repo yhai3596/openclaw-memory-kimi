@@ -31,8 +31,13 @@ git commit -m "$COMMIT_MSG" >> "$LOG_FILE" 2>&1
 
 # 如果有远程仓库，推送
 if git remote get-url origin >/dev/null 2>&1; then
+    # 使用 PAT 推送（已配置在 remote URL 中）
     git push origin master >> "$LOG_FILE" 2>&1
-    echo "[$DATE] 已推送到远程仓库" >> "$LOG_FILE"
+    if [ $? -eq 0 ]; then
+        echo "[$DATE] 已推送到 GitHub" >> "$LOG_FILE"
+    else
+        echo "[$DATE] 推送失败，请检查网络或 Token" >> "$LOG_FILE"
+    fi
 else
     echo "[$DATE] 警告: 未配置远程仓库" >> "$LOG_FILE"
 fi
