@@ -1,8 +1,59 @@
 [
   {
+    "id": "test001",
+    "timestamp": "2026-03-01T12:00:00+08:00",
+    "title": "伊朗导弹击中以军总参谋部",
+    "content": "据央视新闻援引伊朗方面1日消息，伊朗伊斯兰革命卫队导弹击中以军总参谋部。",
+    "source": "央视新闻",
+    "source_url": "https://m.21jingji.com/journal/240.html",
+    "category": "军事",
+    "verified": true
+  },
+  {
+    "id": "test002",
+    "timestamp": "2026-03-01T11:44:00+08:00",
+    "title": "伊朗对伊拉克北部美军基地发起袭击",
+    "content": "据新华社援引伊朗法尔斯通讯社1日报道，伊朗当天对伊拉克北部的一处美军基地发起袭击。",
+    "source": "新华社",
+    "source_url": "https://m.21jingji.com/journal/240.html",
+    "category": "军事",
+    "verified": true
+  },
+  {
+    "id": "test003",
+    "timestamp": "2026-03-01T11:12:00+08:00",
+    "title": "伊朗政府就哈梅内伊殉职发表声明",
+    "content": "伊朗政府就伊朗最高领袖哈梅内伊殉职发表声明说，必将以全部的力量和决心，让敌人付出惨痛的代价。",
+    "source": "新华社",
+    "source_url": "https://m.21jingji.com/journal/240.html",
+    "category": "政治",
+    "verified": true
+  },
+  {
+    "id": "test004",
+    "timestamp": "2026-03-01T10:22:00+08:00",
+    "title": "霍尔木兹海峡油轮运输陷入停滞",
+    "content": "根据国际油轮流量监测系统的实时数据显示，目前位于霍尔木兹海峡周边海域的油轮航行速度已普遍降至零。",
+    "source": "央视新闻",
+    "source_url": "https://m.21jingji.com/journal/240.html",
+    "category": "经济",
+    "verified": true
+  },
+  {
+    "id": "test005",
+    "timestamp": "2026-03-01T09:39:00+08:00",
+    "title": "伊朗一学校遭导弹袭击 已致64人死亡",
+    "content": "伊朗霍尔木兹甘省一所女子小学遭到以色列导弹袭击，遇难者人数增至64人，受伤人数达92人。",
+    "source": "央视新闻",
+    "source_url": "https://m.21jingji.com/journal/240.html",
+    "category": "人道",
+    "verified": true
+  }
+][
+  {
     "id": "search001",
     "timestamp": "2026-03-01T13:00:00+08:00",
-    "title": "美以空袭致伊近千人伤亡，特朗普称哈梅内伊已死，伊朗否认",
+    "title": "美以空袭致伊近千人伤亡，特朗普称哈梅内伊"已死"，伊朗否认",
     "content": "多家美媒援引美国官员的话报道，美以联合军事行动的最终目的是摧毁伊朗政权，预计此次对伊朗的空袭将持续数天甚至数周。伊朗否认哈梅内伊身亡消息。",
     "source": "新华网",
     "source_url": "https://www.news.cn/world/20260301/6ce369b986db455ebc390c57daf48d83/c.html",
@@ -22,8 +73,8 @@
   {
     "id": "search003",
     "timestamp": "2026-03-01T12:00:00+08:00",
-    "title": "战火升级！烈度或超12日战争，本轮美伊冲突五大疑问待解",
-    "content": "本轮美伊冲突烈度可能超过12日战争，五大疑问待解：冲突将持续多久？伊朗会如何报复？地区国家如何选边？国际油价走势如何？国际社会如何反应？",
+    "title": "战火升级！烈度或超"12日战争"，本轮美伊冲突五大疑问待解",
+    "content": "本轮美伊冲突烈度可能超过"12日战争"，五大疑问待解：冲突将持续多久？伊朗会如何报复？地区国家如何选边？国际油价走势如何？国际社会如何反应？",
     "source": "中国新闻网",
     "source_url": "https://www.chinanews.com.cn/gj/2026/03-01/10578620.shtml",
     "category": "政治",

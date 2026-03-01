@@ -12,15 +12,17 @@ def generate_timeline():
     web_dir = Path(__file__).parent.parent / "web"
     web_dir.mkdir(exist_ok=True)
     
-    # 读取所有历史数据
+    # 读取所有历史数据（包括搜索数据）
     all_news = []
-    for news_file in sorted(data_dir.glob("news-*.json"), reverse=True):
-        try:
-            with open(news_file) as f:
-                news = json.load(f)
-                all_news.extend(news)
-        except:
-            continue
+    for news_file in sorted(data_dir.glob("*.json"), reverse=True):
+        if news_file.name.startswith("news"):
+            try:
+                with open(news_file) as f:
+                    news = json.load(f)
+                    if isinstance(news, list):
+                        all_news.extend(news)
+            except:
+                continue
     
     # 去重并排序（最新的在前）
     seen_ids = set()
