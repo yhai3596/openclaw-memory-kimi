@@ -19,7 +19,8 @@ REMOTE_STATUS=""
 # 1. 执行备份
 echo "[$DATETIME] 执行自动备份..." >> "$LOG_FILE"
 cd "$WORKSPACE" && ./.backup.sh >> "$LOG_FILE" 2>&1
-if grep -q "备份完成" "$LOG_FILE" 2>/dev/null || grep -q "没有变更，跳过备份" "$LOG_FILE" 2>/dev/null; then
+# 检查最近5行日志判断是否成功
+if tail -5 "$LOG_FILE" | grep -q "备份完成\|没有变更"; then
     BACKUP_STATUS="✅ 备份正常"
 else
     BACKUP_STATUS="⚠️ 备份异常"
