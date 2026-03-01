@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-生成时间线网页
+生成累积时间线网页 - 显示全部历史数据
 """
 
 import json
@@ -12,21 +12,31 @@ def generate_timeline():
     web_dir = Path(__file__).parent.parent / "web"
     web_dir.mkdir(exist_ok=True)
     
-    # 读取今天的新闻
-    today = datetime.now().strftime("%Y-%m-%d")
-    news_file = data_dir / f"news-{today}.json"
+    # 读取所有历史数据
+    all_news = []
+    for news_file in sorted(data_dir.glob("news-*.json"), reverse=True):
+        try:
+            with open(news_file) as f:
+                news = json.load(f)
+                all_news.extend(news)
+        except:
+            continue
     
-    if not news_file.exists():
-        news = []
-    else:
-        with open(news_file) as f:
-            news = json.load(f)
+    # 去重并排序（最新的在前）
+    seen_ids = set()
+    unique_news = []
+    for item in all_news:
+        if item["id"] not in seen_ids:
+            seen_ids.add(item["id"])
+            unique_news.append(item)
     
-    # 按类别分组
-    categories = {"军事": [], "政治": [], "经济": [], "人道": [], "其他": []}
-    for item in news:
+    unique_news.sort(key=lambda x: x["timestamp"], reverse=True)
+    
+    # 按类别统计
+    categories = {"军事": 0, "政治": 0, "经济": 0, "人道": 0, "其他": 0}
+    for item in unique_news:
         cat = item.get("category", "其他")
-        categories[cat].append(item)
+        categories[cat] = categories.get(cat, 0) + 1
     
     # 生成 HTML
     html = f"""<!DOCTYPE html>
@@ -34,69 +44,204 @@ def generate_timeline():
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>中东局势实时追踪 | {today}</title>
+    <title>🔴 中东局势实时追踪 | 时间线</title>
     <style>
         * {{ margin: 0; padding: 0; box-sizing: border-box; }}
-        body {{ font-family: -apple-system, sans-serif; background: #f5f5f5; }}
-        .header {{ background: #1a1a2e; color: white; padding: 20px; text-align: center; }}
-        .container {{ max-width: 800px; margin: 0 auto; padding: 20px; }}
-        .stats {{ display: flex; gap: 15px; margin-bottom: 20px; flex-wrap: wrap; }}
-        .stat-box {{ background: white; padding: 15px; border-radius: 8px; flex: 1; text-align: center; }}
-        .stat-box .number {{ font-size: 24px; font-weight: bold; color: #e74c3c; }}
-        .timeline {{ position: relative; padding-left: 30px; }}
-        .timeline::before {{ content: ''; position: absolute; left: 10px; top: 0; bottom: 0; width: 2px; background: #ddd; }}
-        .event {{ background: white; margin-bottom: 15px; padding: 15px; border-radius: 8px; }}
-        .event-time {{ font-size: 12px; color: #888; }}
-        .event-title {{ font-size: 16px; font-weight: bold; margin: 5px 0; }}
-        .event-source {{ font-size: 12px; color: #3498db; }}
-        .category-tag {{ display: inline-block; padding: 2px 8px; border-radius: 4px; font-size: 11px; margin-right: 5px; color: white; }}
+        body {{ font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: #f5f5f5; line-height: 1.6; }}
+        .header {{ background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%); color: white; padding: 30px 20px; text-align: center; }}
+        .header h1 {{ font-size: 28px; margin-bottom: 10px; }}
+        .header .subtitle {{ color: #888; font-size: 14px; }}
+        .container {{ max-width: 900px; margin: 0 auto; padding: 20px; }}
+        .stats {{ display: flex; gap: 15px; margin-bottom: 25px; flex-wrap: wrap; }}
+        .stat-box {{ background: white; padding: 20px; border-radius: 12px; flex: 1; min-width: 100px; text-align: center; box-shadow: 0 2px 8px rgba(0,0,0,0.1); }}
+        .stat-box .number {{ font-size: 32px; font-weight: bold; color: #e74c3c; }}
+        .stat-box .label {{ font-size: 13px; color: #666; margin-top: 5px; }}
+        .timeline-header {{ display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; }}
+        .timeline-title {{ font-size: 20px; font-weight: bold; }}
+        .auto-refresh {{ font-size: 12px; color: #27ae60; }}
+        .timeline {{ position: relative; padding-left: 40px; }}
+        .timeline::before {{ content: ''; position: absolute; left: 15px; top: 0; bottom: 0; width: 3px; background: linear-gradient(to bottom, #e74c3c, #3498db); border-radius: 3px; }}
+        .date-divider {{ 
+            background: #1a1a2e; 
+            color: white; 
+            padding: 8px 15px; 
+            border-radius: 20px; 
+            font-size: 14px; 
+            font-weight: bold;
+            margin: 20px 0 15px -25px;
+            display: inline-block;
+            position: relative;
+            z-index: 1;
+        }}
+        .event {{ 
+            background: white; 
+            margin-bottom: 15px; 
+            padding: 20px; 
+            border-radius: 12px; 
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            position: relative;
+            transition: transform 0.2s;
+        }}
+        .event:hover {{ transform: translateX(5px); }}
+        .event::before {{ 
+            content: ''; 
+            position: absolute; 
+            left: -32px; 
+            top: 25px; 
+            width: 14px; 
+            height: 14px; 
+            border-radius: 50%; 
+            background: #e74c3c;
+            border: 3px solid white;
+            box-shadow: 0 0 0 3px #e74c3c;
+        }}
+        .event-time {{ font-size: 13px; color: #888; margin-bottom: 8px; display: flex; align-items: center; gap: 8px; }}
+        .event-title {{ font-size: 17px; font-weight: bold; margin-bottom: 10px; line-height: 1.5; }}
+        .event-content {{ font-size: 14px; color: #555; margin-bottom: 12px; line-height: 1.6; }}
+        .event-meta {{ display: flex; gap: 10px; align-items: center; flex-wrap: wrap; }}
+        .category-tag {{ 
+            display: inline-block; 
+            padding: 4px 10px; 
+            border-radius: 6px; 
+            font-size: 12px; 
+            font-weight: 500;
+            color: white; 
+        }}
         .cat-军事 {{ background: #e74c3c; }}
         .cat-政治 {{ background: #3498db; }}
         .cat-经济 {{ background: #27ae60; }}
         .cat-人道 {{ background: #f39c12; }}
-        .footer {{ text-align: center; padding: 20px; color: #888; font-size: 12px; }}
+        .cat-其他 {{ background: #95a5a6; }}
+        .event-source {{ font-size: 12px; }}
+        .event-source a {{ color: #3498db; text-decoration: none; }}
+        .event-source a:hover {{ text-decoration: underline; }}
+        .verified-badge {{ color: #27ae60; font-size: 12px; }}
+        .unverified {{ 
+            background: #fff3cd; 
+            border-left: 3px solid #ffc107; 
+            padding: 8px 12px; 
+            margin-top: 10px; 
+            font-size: 12px; 
+            color: #856404;
+            border-radius: 0 6px 6px 0;
+        }}
+        .footer {{ 
+            text-align: center; 
+            padding: 30px 20px; 
+            color: #888; 
+            font-size: 13px;
+            border-top: 1px solid #ddd;
+            margin-top: 30px;
+        }}
+        .share-btn {{
+            background: #1a1a2e;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 20px;
+            text-decoration: none;
+            display: inline-block;
+            margin-top: 10px;
+        }}
+        @media (max-width: 600px) {{
+            .stats {{ flex-direction: column; }}
+            .timeline {{ padding-left: 30px; }}
+            .event::before {{ left: -24px; }}
+        }}
     </style>
 </head>
 <body>
     <div class="header">
         <h1>🔴 中东局势实时追踪</h1>
-        <div>美伊冲突动态 · 自动更新 · 多源验证</div>
+        <div class="subtitle">美伊冲突时间线 · 自动更新 · 多源验证</div>
     </div>
+    
     <div class="container">
         <div class="stats">
-            <div class="stat-box"><div class="number">{len(news)}</div><div>今日事件</div></div>
-            <div class="stat-box"><div class="number">{len(categories['军事'])}</div><div>军事动态</div></div>
-            <div class="stat-box"><div class="number">{len(categories['政治'])}</div><div>政治进展</div></div>
-            <div class="stat-box"><div class="number">{len(categories['人道'])}</div><div>人道状况</div></div>
+            <div class="stat-box">
+                <div class="number">{len(unique_news)}</div>
+                <div class="label">累计事件</div>
+            </div>
+            <div class="stat-box">
+                <div class="number">{categories['军事']}</div>
+                <div class="label">军事动态</div>
+            </div>
+            <div class="stat-box">
+                <div class="number">{categories['政治']}</div>
+                <div class="label">政治进展</div>
+            </div>
+            <div class="stat-box">
+                <div class="number">{categories['人道']}</div>
+                <div class="label">人道状况</div>
+            </div>
         </div>
+        
+        <div class="timeline-header">
+            <div class="timeline-title">📰 最新动态</div>
+            <div class="auto-refresh">🔄 每10分钟自动更新</div>
+        </div>
+        
         <div class="timeline">
 """
     
-    for item in news[:50]:
+    # 按日期分组显示
+    current_date = None
+    for item in unique_news[:100]:  # 最多显示100条
+        item_date = item["timestamp"][:10] if len(item["timestamp"]) >= 10 else "未知"
         time_str = item["timestamp"][11:16] if len(item["timestamp"]) > 16 else item["timestamp"]
+        
+        # 日期分隔线
+        if item_date != current_date:
+            html += f'            <div class="date-divider">📅 {item_date}</div>\n'
+            current_date = item_date
+        
         cat = item.get("category", "其他")
-        html += f"""
-            <div class="event">
-                <div class="event-time">{time_str}</div>
+        verified = item.get("verified", False)
+        
+        html += f"""            <div class="event">
+                <div class="event-time">
+                    🕐 {time_str}
+                    {'<span class="verified-badge">✅ 官方媒体</span>' if verified else ''}
+                </div>
                 <div class="event-title">
                     <span class="category-tag cat-{cat}">{cat}</span>
                     {item['title']}
                 </div>
-                <div>{item['content'][:150]}...</div>
-                <div class="event-source">来源: <a href="{item['source_url']}" target="_blank">{item['source']}</a></div>
+                <div class="event-content">{item['content'][:200]}...</div>
+                <div class="event-meta">
+                    <span class="event-source">来源: <a href="{item['source_url']}" target="_blank">{item['source']}</a></span>
+                </div>
+                {'<div class="unverified">⚠️ 此消息尚未经官方证实，仅供参考</div>' if not verified else ''}
             </div>
 """
     
-    if not news:
-        html += '<div class="event"><div class="event-title">暂无数据</div><div>正在抓取最新信息...</div></div>'
+    if not unique_news:
+        html += """            <div class="event">
+                <div class="event-title">暂无数据</div>
+                <div class="event-content">正在抓取最新信息，请稍后再试...</div>
+            </div>
+"""
     
-    html += """
-        </div>
+    html += """        </div>
     </div>
+    
     <div class="footer">
-        <p>数据来源: 新华社、新华网、21世纪经济报道等</p>
-        <p>自动更新 · 每10分钟刷新</p>
+        <p>数据来源: 新华社、新华网、人民日报、21世纪经济报道等官方媒体</p>
+        <p>自动更新 · 每10分钟刷新 · 历史数据累积保存</p>
+        <a href="#" class="share-btn" onclick="copyLink()">📋 复制链接分享</a>
     </div>
+    
+    <script>
+        // 自动刷新
+        setTimeout(function() {
+            location.reload();
+        }, 600000); // 10分钟刷新
+        
+        // 复制链接
+        function copyLink() {
+            navigator.clipboard.writeText(window.location.href);
+            alert('链接已复制，可以分享给他人');
+        }
+    </script>
 </body>
 </html>
 """
@@ -107,6 +252,7 @@ def generate_timeline():
         f.write(html)
     
     print(f"网页已生成: {output_file}")
+    print(f"累计事件: {len(unique_news)}")
     return output_file
 
 if __name__ == "__main__":
