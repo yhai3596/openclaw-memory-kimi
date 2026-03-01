@@ -1,0 +1,64 @@
+system:
+  name: "空调质量反馈分析系统"
+  version: "1.0.0"
+  
+schedule:
+  push_time: "周四 08:30"
+  timezone: "America/New_York"
+
+model:
+  name: "BAAI/bge-m3"
+  device: "cuda"
+  max_length: 512
+  batch_size: 32
+  
+  training:
+    epochs: 5
+    learning_rate: 2e-5
+    warmup_steps: 100
+    test_size: 0.2
+
+classification:
+  quality_threshold: 0.6
+  confidence_threshold: 0.75
+  qc_threshold: 2
+  group_by: ["primary_category", "model"]
+
+severity:
+  levels:
+    安全风险: 5
+    功能失效: 4
+    漏水: 4
+    安装问题: 3
+    噪音: 3
+    异味: 3
+    显示故障: 2
+    外观瑕疵: 2
+    其他: 1
+  
+  mapping:
+    not_cooling: 4
+    not_heating: 4
+    wont_start: 4
+    leaking: 4
+    noise: 3
+    installation: 3
+    error_code: 2
+    cosmetic: 2
+    other: 1
+
+trend:
+  coefficients:
+    high: 1.5
+    medium: 1.2
+    low: 1.0
+
+alert:
+  feishu_webhook: ""
+  instant_alert: true
+  recipients: []
+
+paths:
+  data_dir: "./data"
+  model_dir: "./models"
+  export_dir: "./exports"
