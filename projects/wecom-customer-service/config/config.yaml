@@ -1,0 +1,42 @@
+# 企业微信客服群监控系统配置
+# 针对2个群的MVP版本
+
+WECHAT_WORK:
+  # 企业微信配置（需要你自己填写）
+  CORP_ID: ""  # 企业ID
+  CORP_SECRET: ""  # 应用Secret
+  AGENT_ID: ""  # 应用AgentID
+  
+  # 会话内容存档配置（需要开通）
+  MSG_ARCHIVE_SECRET: ""  # 消息存档Secret
+  MSG_ARCHIVE_PRIVATE_KEY: ""  # 消息存档私钥路径
+  
+  # 监控的群列表（2个测试群）
+  MONITOR_GROUPS:
+    - group_id: "GROUP_001"
+      name: "测试客户群A"
+      webhook: ""  # 群机器人Webhook地址
+      admin: "@张三"  # 群管理员
+    - group_id: "GROUP_002"  
+      name: "测试客户群B"
+      webhook: ""
+      admin: "@李四"
+
+# 预警配置
+ALERT:
+  # 响应时间阈值（分钟）
+  WARNING_THRESHOLD: 30  # 30分钟提醒管理员
+  URGENT_THRESHOLD: 60   # 60分钟上报主管
+  
+  # 飞书通知配置
+  FEISHU_WEBHOOK: ""  # 飞书机器人Webhook（用于通知主管）
+  
+# 数据存储
+STORAGE:
+  DB_PATH: "./data/customer_service.db"
+  
+# 定时任务
+SCHEDULE:
+  COLLECT_INTERVAL: 300  # 5分钟拉取一次消息
+  ALERT_CHECK_INTERVAL: 300  # 5分钟检查一次预警
+  DAILY_REPORT_TIME: "09:00"  # 每天9点生成日报
