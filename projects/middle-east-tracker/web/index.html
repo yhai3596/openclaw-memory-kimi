@@ -84,6 +84,18 @@
             color: #856404;
             border-radius: 0 6px 6px 0;
         }
+        .casualty-box {
+            background: linear-gradient(135deg, #ff6b6b 0%, #ee5a5a 100%);
+            color: white;
+            padding: 20px;
+            border-radius: 12px;
+            margin-bottom: 20px;
+        }
+        .casualty-box h3 { font-size: 16px; margin-bottom: 15px; }
+        .casualty-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); gap: 15px; }
+        .casualty-item { text-align: center; }
+        .casualty-item .num { font-size: 28px; font-weight: bold; }
+        .casualty-item .label { font-size: 12px; opacity: 0.9; }
         .footer { 
             text-align: center; 
             padding: 30px 20px; 
@@ -115,32 +127,163 @@
     </div>
     
     <div class="container">
+        <!-- 伤亡统计 -->
+        <div class="casualty-box">
+            <h3>📊 最新伤亡统计（截至3月2日）</h3>
+            <div class="casualty-grid">
+                <div class="casualty-item">
+                    <div class="num">201+</div>
+                    <div class="label">伊朗死亡</div>
+                </div>
+                <div class="casualty-item">
+                    <div class="num">9+</div>
+                    <div class="label">以色列死亡</div>
+                </div>
+                <div class="casualty-item">
+                    <div class="num">3</div>
+                    <div class="label">美军阵亡</div>
+                </div>
+                <div class="casualty-item">
+                    <div class="num">9国</div>
+                    <div class="label">受波及</div>
+                </div>
+            </div>
+        </div>
+
         <div class="stats">
             <div class="stat-box">
-                <div class="number">7</div>
+                <div class="number">15+</div>
                 <div class="label">累计事件</div>
             </div>
             <div class="stat-box">
-                <div class="number">2</div>
+                <div class="number">9</div>
                 <div class="label">军事动态</div>
             </div>
             <div class="stat-box">
-                <div class="number">3</div>
+                <div class="number">4</div>
                 <div class="label">政治进展</div>
             </div>
             <div class="stat-box">
-                <div class="number">0</div>
+                <div class="number">2</div>
                 <div class="label">人道状况</div>
             </div>
         </div>
         
         <div class="timeline-header">
             <div class="timeline-title">📰 最新动态</div>
-            <div class="auto-refresh">🔄 每10分钟自动更新</div>
+            <div class="auto-refresh">🔄 每小时自动更新</div>
         </div>
         
         <div class="timeline">
+            <div class="date-divider">📅 2026-03-02</div>
+            
+            <div class="event">
+                <div class="event-time">
+                    🕐 08:00
+                    <span class="verified-badge">✅ 官方媒体</span>
+                </div>
+                <div class="event-title">
+                    <span class="category-tag cat-军事">军事</span>
+                    冲突持续第三天，特朗普称军事行动将持续约4周
+                </div>
+                <div class="event-content">美国总统特朗普表示，对伊朗的军事行动"进展超前"，预计将持续约4周。同时透露愿与伊朗新领导层对话，但称"过去数周参与谈判的部分伊朗官员已经不在了"。</div>
+                <div class="event-meta">
+                    <span class="event-source">来源: 央视新闻/新华社</span>
+                </div>
+            </div>
+
+            <div class="event">
+                <div class="event-time">
+                    🕐 03:00
+                    <span class="verified-badge">✅ 官方媒体</span>
+                </div>
+                <div class="event-title">
+                    <span class="category-tag cat-军事">军事</span>
+                    美军确认3名士兵阵亡，为冲突以来首次
+                </div>
+                <div class="event-content">美国中央司令部确认，3名美军士兵在伊朗反击行动中阵亡，5人重伤。特朗普表示将"为阵亡将士复仇"，并警告"可能还会有更多伤亡"。</div>
+                <div class="event-meta">
+                    <span class="event-source">来源: 美国中央司令部/CNBC</span>
+                </div>
+            </div>
+
             <div class="date-divider">📅 2026-03-01</div>
+
+            <div class="event">
+                <div class="event-time">
+                    🕐 深夜
+                    <span class="verified-badge">✅ 官方媒体</span>
+                </div>
+                <div class="event-title">
+                    <span class="category-tag cat-政治">政治</span>
+                    伊朗成立临时领导委员会，全国哀悼40天
+                </div>
+                <div class="event-content">伊朗官方确认哈梅内伊"殉职"，宣布全国哀悼40天，公共机构停摆7天。临时领导委员会成立，由总统佩泽希齐扬、司法总监埃杰耶、高级教士阿拉菲组成，直至选出新最高领袖。</div>
+                <div class="event-meta">
+                    <span class="event-source">来源: 新华社/迈赫尔通讯社</span>
+                </div>
+            </div>
+
+            <div class="event">
+                <div class="event-time">
+                    🕐 晚间
+                    <span class="verified-badge">✅ 多方确认</span>
+                </div>
+                <div class="event-title">
+                    <span class="category-tag cat-军事">军事</span>
+                    伊朗发动第9轮"真实承诺4"反击，27个美军基地遭袭
+                </div>
+                <div class="event-content">伊朗伊斯兰革命卫队宣布对以色列全境及中东美军目标发动第9轮打击。已袭击27个美军基地，宣称造成560名美军伤亡。美军否认"林肯"号航母遭袭说法。</div>
+                <div class="event-meta">
+                    <span class="event-source">来源: 伊朗伊斯兰革命卫队/半岛电视台</span>
+                </div>
+            </div>
+
+            <div class="event">
+                <div class="event-time">
+                    🕐 下午
+                    <span class="verified-badge">✅ 官方确认</span>
+                </div>
+                <div class="event-title">
+                    <span class="category-tag cat-人道">人道</span>
+                    米纳卜小学遭袭死亡人数升至165人，多数为儿童
+                </div>
+                <div class="event-content">伊朗霍尔木兹甘省米纳卜市小学搜救工作结束，遇难人数最终确定为165人。此外，德黑兰甘地医院和阿瓦士一家医院也遭以军袭击。</div>
+                <div class="event-meta">
+                    <span class="event-source">来源: 伊朗国家电视台/央视新闻</span>
+                </div>
+            </div>
+
+            <div class="event">
+                <div class="event-time">
+                    🕐 下午
+                    <span class="verified-badge">✅ 官方确认</span>
+                </div>
+                <div class="event-title">
+                    <span class="category-tag cat-军事">军事</span>
+                    以色列超100架战机空袭德黑兰，目标革命卫队总部
+                </div>
+                <div class="event-content">以色列空军完成一轮针对德黑兰的空袭，超过100架战机参与，目标是伊斯兰革命卫队数十个总部（指挥中心），包括情报部门、空军和内部安全部门。伊朗国家电视台多个频道一度丢失信号。</div>
+                <div class="event-meta">
+                    <span class="event-source">来源: 以色列国防军/伊朗国家电视台</span>
+                </div>
+            </div>
+
+            <div class="event">
+                <div class="event-time">
+                    🕐 全天
+                    <span class="verified-badge">✅ 多方确认</span>
+                </div>
+                <div class="event-title">
+                    <span class="category-tag cat-经济">经济</span>
+                    战火蔓延中东多国，迪拜机场、帆船酒店受损
+                </div>
+                <div class="event-content">阿联酋、卡塔尔、巴林、科威特、伊拉克等多国报告遭袭。迪拜国际机场、帆船酒店、杰贝阿里港受损。阿联酋3死58伤，卡塔尔16伤。霍尔木兹海峡被封锁，多艘油轮遭袭。</div>
+                <div class="event-meta">
+                    <span class="event-source">来源: 阿联酋国防部/卡塔尔内政部</span>
+                </div>
+            </div>
+
             <div class="event">
                 <div class="event-time">
                     🕐 13:00
@@ -148,124 +291,72 @@
                 </div>
                 <div class="event-title">
                     <span class="category-tag cat-军事">军事</span>
-                    美以空袭致伊近千人伤亡，特朗普称哈梅内伊已死，伊朗否认
+                    美以空袭致伊近千人伤亡，特朗普称哈梅内伊已死
                 </div>
-                <div class="event-content">多家美媒援引美国官员的话报道，美以联合军事行动的最终目的是摧毁伊朗政权，预计此次对伊朗的空袭将持续数天甚至数周。伊朗否认哈梅内伊身亡消息。...</div>
+                <div class="event-content">多家美媒援引美国官员报道，美以联合军事行动最终目的是摧毁伊朗政权，预计空袭将持续数天甚至数周。伊朗否认哈梅内伊身亡消息（后于晚间确认）。</div>
                 <div class="event-meta">
-                    <span class="event-source">来源: <a href="https://www.news.cn/world/20260301/6ce369b986db455ebc390c57daf48d83/c.html" target="_blank">新华网</a></span>
+                    <span class="event-source">来源: 新华网</span>
                 </div>
-                
             </div>
+
+            <div class="date-divider">📅 2026-02-28</div>
+
             <div class="event">
                 <div class="event-time">
-                    🕐 12:30
-                    <span class="verified-badge">✅ 官方媒体</span>
+                    🕐 上午
+                    <span class="verified-badge">✅ 官方确认</span>
                 </div>
                 <div class="event-title">
                     <span class="category-tag cat-军事">军事</span>
-                    以色列再次对伊朗发动新一轮空袭
+                    以色列发动"先发制人"打击，代号"咆哮的狮子"
                 </div>
-                <div class="event-content">以色列军方发表声明称，以色列军队已开始针对伊朗恐怖政权的弹道导弹阵列和防空系统的新一轮空袭。...</div>
+                <div class="event-content">以色列国防部长卡茨宣布对伊朗发动"先发制人"打击，代号"咆哮的狮子"。约200架战机参与，袭击伊朗导弹装置和防御系统。以色列全国进入紧急状态。两小时后伊朗对以色列和中东美军基地实施全面还击。</div>
                 <div class="event-meta">
-                    <span class="event-source">来源: <a href="https://www.zaobao.com/news/world/story20260301-8656360" target="_blank">联合早报</a></span>
+                    <span class="event-source">来源: 以色列国防部/光明日报</span>
                 </div>
-                
             </div>
+
             <div class="event">
                 <div class="event-time">
-                    🕐 12:00
-                    <span class="verified-badge">✅ 官方媒体</span>
+                    🕐 早间
+                    <span class="verified-badge">✅ 官方确认</span>
                 </div>
                 <div class="event-title">
                     <span class="category-tag cat-政治">政治</span>
-                    战火升级！烈度或超12日战争，本轮美伊冲突五大疑问待解
+                    哈梅内伊在美以空袭中身亡
                 </div>
-                <div class="event-content">本轮美伊冲突烈度可能超过12日战争，五大疑问待解：冲突将持续多久？伊朗会如何报复？地区国家如何选边？国际油价走势如何？国际社会如何反应？...</div>
+                <div class="event-content">伊朗最高领袖哈梅内伊在美以联合空袭中身亡。以色列和美国选择周六发动袭击，正值哈梅内伊与其高级助手举行会议之际。特朗普称通过"情报和高度精密追踪系统"定位目标。</div>
                 <div class="event-meta">
-                    <span class="event-source">来源: <a href="https://www.chinanews.com.cn/gj/2026/03-01/10578620.shtml" target="_blank">中国新闻网</a></span>
+                    <span class="event-source">来源: 纽约时报/以色列官员</span>
                 </div>
-                
             </div>
-            <div class="event">
-                <div class="event-time">
-                    🕐 11:30
-                    <span class="verified-badge">✅ 官方媒体</span>
-                </div>
-                <div class="event-title">
-                    <span class="category-tag cat-政治">政治</span>
-                    危险时刻来临，但美国与以色列认为机不可失
-                </div>
-                <div class="event-content">以色列与美国评估认为，伊朗的伊斯兰政权正处于脆弱状态：面对严重经济危机、年初残酷镇压示威所带来的反弹，以及去年夏天战争后仍未完全修复的防御体系。...</div>
-                <div class="event-meta">
-                    <span class="event-source">来源: <a href="https://www.bbc.com/zhongwen/articles/c5yg953jd4wo/simp" target="_blank">BBC中文</a></span>
-                </div>
-                
-            </div>
-            <div class="event">
-                <div class="event-time">
-                    🕐 11:00
-                    
-                </div>
-                <div class="event-title">
-                    <span class="category-tag cat-政治">政治</span>
-                    关于美国袭击伊朗，你应该了解的最新信息
-                </div>
-                <div class="event-content">美国总统特朗普周六宣布，美以对伊朗发动的联合行动已击毙执掌伊朗近37年的最高领袖阿亚图拉阿里·哈梅内伊。这一消息预示着该地区可能出现深刻的政治变化。...</div>
-                <div class="event-meta">
-                    <span class="event-source">来源: <a href="https://cn.nytimes.com/usa/20260301/iran-attacks-what-to-know/" target="_blank">纽约时报中文网</a></span>
-                </div>
-                <div class="unverified">⚠️ 此消息尚未经官方证实，仅供参考</div>
-            </div>
-            <div class="event">
-                <div class="event-time">
-                    🕐 10:30
-                    <span class="verified-badge">✅ 官方媒体</span>
-                </div>
-                <div class="event-title">
-                    <span class="category-tag cat-经济">经济</span>
-                    券商电话会议挤爆了，美伊冲突最新解读来了
-                </div>
-                <div class="event-content">美国多家媒体2月28日报道称，伊朗当天对美国在巴林、科威特、约旦、阿联酋和卡塔尔的军事设施发动报复性袭击。截至目前，尚未收到美军人员伤亡报告。...</div>
-                <div class="event-meta">
-                    <span class="event-source">来源: <a href="https://www.21jingji.com/article/20260301/herald/e338a83be132ad65d1726d9579757403.html" target="_blank">21世纪经济报道</a></span>
-                </div>
-                
-            </div>
-            <div class="event">
-                <div class="event-time">
-                    🕐 10:00
-                    <span class="verified-badge">✅ 官方媒体</span>
-                </div>
-                <div class="event-title">
-                    <span class="category-tag cat-其他">其他</span>
-                    2026年美以空袭伊朗 - 维基百科词条已创建
-                </div>
-                <div class="event-content">以色列其后宣布全国进入紧急状态，指当局预期伊朗可能作出报复性攻击。多家媒体报道称，以色列境内响起防空警报，政府呼吁民众留在受保护区域内。...</div>
-                <div class="event-meta">
-                    <span class="event-source">来源: <a href="https://zh.wikipedia.org/zh-cn/2026%E5%B9%B4%E7%BE%8E%E4%BB%A5%E7%A9%BA%E8%A5%B2%E4%BC%8A%E6%9C%97" target="_blank">维基百科</a></span>
-                </div>
-                
+        </div>
+
+        <!-- 国际反应 -->
+        <div style="background: white; padding: 20px; border-radius: 12px; margin-top: 30px; box-shadow: 0 2px 8px rgba(0,0,0,0.08);">
+            <h3 style="margin-bottom: 15px; font-size: 18px;">🌍 国际反应</h3>
+            <div style="display: grid; gap: 10px; font-size: 14px;">
+                <div><strong>🇺🇸 美国：</strong>特朗普称军事行动将"持续约4周"，表示愿与伊朗新领导层对话</div>
+                <div><strong>🇮🇱 以色列：</strong>内塔尼亚胡称打击力度将进一步加强，已动员10万预备役</div>
+                <div><strong>🇷🇺 俄罗斯：</strong>谴责"蓄意预谋、无端挑起的武装侵略行为"</div>
+                <div><strong>🇪🇺 欧盟：</strong>呼吁"最大克制"，谴责伊朗袭击地区国家</div>
+                <div><strong>🇬🇧 英国：</strong>允许美军使用基地进行防御，击落伊朗无人机</div>
+                <div><strong>🇩🇪 德国：</strong>呼吁制定"后伊朗时代"计划</div>
             </div>
         </div>
     </div>
     
     <div class="footer">
-        <p>数据来源: 新华社、新华网、人民日报、21世纪经济报道等官方媒体</p>
-        <p>自动更新 · 每10分钟刷新 · 历史数据累积保存</p>
-        <a href="#" class="share-btn" onclick="copyLink()">📋 复制链接分享</a>
+        <p>数据来源: 新华社、央视新闻、人民网、半岛电视台、路透社、卫报、CNBC、战争研究所（ISW）</p>
+        <p>自动更新 · 每小时刷新 · 历史数据累积保存</p>
+        <p style="margin-top: 10px; color: #999;">最后更新: 2026年3月2日 08:20</p>
     </div>
     
     <script>
         // 自动刷新
         setTimeout(function() {
             location.reload();
-        }, 600000); // 10分钟刷新
-        
-        // 复制链接
-        function copyLink() {
-            navigator.clipboard.writeText(window.location.href);
-            alert('链接已复制，可以分享给他人');
-        }
+        }, 3600000); // 1小时刷新
     </script>
 </body>
 </html>

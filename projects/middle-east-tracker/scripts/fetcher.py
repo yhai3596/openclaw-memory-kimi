@@ -23,9 +23,11 @@ class NewsFetcher:
             "keywords": ["伊朗", "以色列", "美国", "中东", "哈梅内伊", "特朗普", "战争", "导弹", "袭击", "冲突", "军事"],
             "sources": {
                 "rss": [
-                    {"name": "BBC中文", "url": "http://feeds.bbci.co.uk/zhongwen/simp/rss.xml", "enabled": True},
-                    {"name": "路透中文网", "url": "https://cn.reuters.com/rssFeed/CNTopNews/", "enabled": True},
-                    {"name": "21财经", "url": "https://m.21jingji.com/rss/world.xml", "enabled": True},
+                    {"name": "BBC中文", "url": "http://feeds.bbci.co.uk/zhongwen/simp/rss.xml", "enabled": False},
+                    {"name": "路透中文网", "url": "https://cn.reuters.com/rssFeed/CNTopNews/", "enabled": False},
+                    {"name": "21财经", "url": "https://m.21jingji.com/rss/world.xml", "enabled": False},
+                    {"name": "人民网-国际", "url": "https://plink.anyfeeder.com/people/world", "enabled": True},
+                    {"name": "人民网-国内", "url": "https://plink.anyfeeder.com/people/politics", "enabled": True},
                 ],
                 "web": [
                     {"name": "新浪新闻", "url": "https://news.sina.com.cn/world/", "enabled": False},
