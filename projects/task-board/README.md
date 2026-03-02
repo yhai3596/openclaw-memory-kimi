@@ -22,7 +22,7 @@
 |------|------|------|--------|
 | 记忆自动备份 | memory-system | ✅ 运行中 | 配置远程仓库 |
 | 心跳通知系统 | memory-system | ✅ 运行中 | 无需操作 |
-| ListenHub 框架 | media-generation | ✅ 已部署 | 接入 API |
+| ListenHub API 接入 | media-generation | 🟡 API Key 已配置，测试中发现端点问题 | 联系 ListenHub 技术支持确认 API 端点 |
 
 ---
 
@@ -42,7 +42,7 @@
 | 提醒内容 | 频率 | 下次提醒 | 状态 |
 |----------|------|----------|------|
 | GitHub 仓库创建 | 每天 1 次 | 2026-03-02 | ⏳ 等待中 |
-| ListenHub API Key | 每天 1 次 | 2026-03-02 | ⏳ 等待中 |
+| ListenHub API 问题 | 需要联系 support@marswave.ai | - | 🟡 等待解决 |
 | 心跳系统状态 | 每次心跳 | 实时 | ✅ 运行中 |
 
 ---
@@ -61,6 +61,7 @@ task-board       [██████████] 100% 运行中
 
 ## 📝 今日记录
 
+- 14:30: ListenHub API Key 已配置，测试中发现端点 404 问题
 - 12:00: 创建任务看板系统
 - 11:57: ListenHub 框架部署完成
 - 11:28: 定时备份正常执行

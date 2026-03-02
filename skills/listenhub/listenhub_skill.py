@@ -17,6 +17,14 @@ from pathlib import Path
 CONFIG_FILE = Path(__file__).parent / "config.json"
 API_BASE = "https://api.listenhub.ai/v1"
 
+# API 端点
+ENDPOINTS = {
+    "podcast": "/podcasts",
+    "audio": "/audio", 
+    "video": "/videos",
+    "image": "/images"
+}
+
 class ListenHubSkill:
     def __init__(self, api_key=None):
         self.api_key = api_key or self._load_api_key()
@@ -54,19 +62,20 @@ class ListenHubSkill:
         }
         
         print(f"正在生成播客: {topic}")
-        # 实际调用 ListenHub API
-        # response = requests.post(f"{API_BASE}/generate", 
-        #                         headers=self._headers(), 
-        #                         json=payload)
-        # return response.json()
-        
-        # 模拟返回（等待真实 API Key）
-        return {
-            "status": "pending",
-            "task_id": f"task_{int(time.time())}",
-            "estimated_time": "2-3 minutes",
-            "topic": topic
-        }
+        try:
+            response = requests.post(f"{API_BASE}{ENDPOINTS['podcast']}", 
+                                    headers=self._headers(), 
+                                    json=payload,
+                                    timeout=30)
+            response.raise_for_status()
+            return response.json()
+        except requests.exceptions.RequestException as e:
+            print(f"API 调用失败: {e}")
+            return {
+                "status": "error",
+                "error": str(e),
+                "topic": topic
+            }
     
     def generate_video(self, content, visuals="auto"):
         """
@@ -92,7 +101,7 @@ class ListenHubSkill:
     def generate_audio(self, text, voice="natural"):
         """
         语音朗读
-        
+
         Args:
             text: 要朗读的文本
             voice: 声音风格 (natural=自然, professional=专业)
@@ -102,13 +111,22 @@ class ListenHubSkill:
             "text": text,
             "voice": voice
         }
-        
+
         print(f"正在生成语音朗读...")
-        return {
-            "status": "pending",
-            "task_id": f"task_{int(time.time())}",
-            "text_length": len(text)
-        }
+        try:
+            response = requests.post(f"{API_BASE}{ENDPOINTS['audio']}",
+                                    headers=self._headers(),
+                                    json=payload,
+                                    timeout=30)
+            response.raise_for_status()
+            return response.json()
+        except requests.exceptions.RequestException as e:
+            print(f"API 调用失败: {e}")
+            return {
+                "status": "error",
+                "error": str(e),
+                "text_length": len(text)
+            }
     
     def generate_image(self, prompt, size="1024x1024"):
         """
