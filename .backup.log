@@ -329,3 +329,9 @@ To https://github.com/yhai3596/openclaw-memory-kimi.git
 [2026-03-03 12:28:55] 已推送到 GitHub
 [2026-03-03 12:28:55] 备份完成
 [2026-03-03 13:29:01] 开始自动备份...
+[master 8b71ef8] Auto-backup: 2026-03-03 13:29:01
+ 2 files changed, 50 insertions(+), 5 deletions(-)
+fatal: unable to access 'https://github.com/yhai3596/openclaw-memory-kimi.git/': GnuTLS recv error (-110): The TLS connection was non-properly terminated.
+[2026-03-03 13:29:01] 推送失败，请检查网络或 Token
+[2026-03-03 13:29:01] 备份完成
+[2026-03-03 14:29:03] 开始自动备份...
