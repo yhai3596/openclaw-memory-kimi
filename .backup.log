@@ -401,3 +401,9 @@ fatal: unable to access 'https://github.com/yhai3596/openclaw-memory-kimi.git/':
 [2026-03-03 23:29:03] 推送失败，请检查网络或 Token
 [2026-03-03 23:29:03] 备份完成
 [2026-03-04 00:29:03] 开始自动备份...
+[master e8c5730] Auto-backup: 2026-03-04 00:29:03
+ 1 file changed, 6 insertions(+)
+fatal: unable to access 'https://github.com/yhai3596/openclaw-memory-kimi.git/': GnuTLS recv error (-110): The TLS connection was non-properly terminated.
+[2026-03-04 00:29:03] 推送失败，请检查网络或 Token
+[2026-03-04 00:29:03] 备份完成
+[2026-03-04 01:29:03] 开始自动备份...
