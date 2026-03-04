@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>小龙虾opencloud初始化能力设计</title>
+    <link rel="stylesheet" href="files/style.css">
+    <script src="files/script.js"></script>
+</head>
+<body>
+<div id="jsonData" style="display:none;" data-json="7OuPeKmPoK4hdsI7Uhb0T0ijs&#43;BvDNaXIZVG&#43;wg6fcteDd0fVWPADQoVLz6Ybw10kuw8g3JtH7zotHq4gD&#43;6wsuwqQYoQgVhekkXB7Q6MpDhrzRkiuIcDIZYVPAwedodEPHxMNtHoMmmbNB5J1XuH64oKeTIu&#43;np4PWqoJBQPmbVo20V65yr1PnYR3Rv61&#43;8KcxIUYZRi9ILWNubh&#43;B4/A&#43;IZ2sWd9qQYc/&#43;Oj0gi&#43;Nh5cuyEa3Y7SfNKAkd/8R0qmwQ99UiQxzFo15Sox2zf71Kd4n9bJ/1NN6hxwSQtwRL64HHxYjeJEFg9Xo7WsLtAGHw4YgQO/KV1ActEI3XAGO04AfHNKmwaQpzs76XCGOGaEFZEcIRUASBCjAHrwlxgvDWGBDV4kdAEoi0PNejdbq9WvkkzfsdI2/vG94n0Syn2fy1MLqnt8SgXvHFrNm13F9c7PoLyug53PL7DoTV6VVvTrQ9Lt0SWsM4rdYPde&#43;fPfvUeuBGxkDSB/3wDptxfXq/SyE4vhd7WM41rl06j/MrULdvbKfavQVr4d3xdFXjrkqrw7/ba&#43;bczAcRygKyipy7Re1OgVt/sT4MsMskNdzNViecEgJKjDkDs&#43;w33TQ2AmhGinWeqShOzWB&#43;dXQZRLEjEmxnkjMUXLC4biIph6TnXPExJOCavFqIH/z8uBbIgCBiOzvq4j9negEbSU6K2F4i/GKpWj&#43;yT7XjTAYYdlOX7qnztyZUp8nB3TAQD2bCpYpv2JSamrKgHUvQALN&#43;at0bc3VCQufuhMQIhA9cDk2PrbgzUg/gWgxdUxQqa4NahrxA29W7z77gWi&#43;Dk1emRzWpjwUwAuvYTaZIRfdInbyB9DexUUuQvG0DYkohKQeAXw9caJJifZZXJM9gWcwoPXNkFrnGdswI6QW61LZLL1WPwnqNKljdIMS2Mtr48iV6QUT0vZUFX628CVaNzGTMN5BB918P6R8xI3&#43;MXupuSqmeczLlg7LQo66NEw48M2W6/V8RVHlXdGYaBz8zYySVSfVJVVj&#43;cp5oJjkipn4ORLU&#43;/X3FHHjspupDWln3kUqQfF/eECkK5vdFAYSBexEZo1Yaa4qt9azmRkOXY3PDktBBVJ8FUbv1uUXE621uMpQ73symAkXreYoz8ahXAThBPkewxLKw0fwR4lQmKoi&#43;iiwu5ofP7xRSc/sPo9Yv36yLuEZ2Yn3FGT4&#43;HMQsCi9hxbp0qEAAcIYIwbxNomSpHl1&#43;G8p3XUS/gjncQouoaYw3EkgcmgK/VlA/RYpyl7wdHgtFEruD0hGKDy6PiwoNA5t/D1ulOuWbCHVURxnDwfaHYeTDD32tpowH9M97QyRchw4AF8LJc7lPnnEF7LbOlFFcYLx&#43;GrU4/kwNUANXLGGYKUp9pt5xLbppTdtvGJ5MFI9l1dfQYJkv6Nel8iRh0ScQruoNnzpGi6/j7C&#43;xNT7wXeuGwt8ThvDyW9N36Onrd7DxtsH3R57DSGgg4sbmhS7o2RNThu3LGL2DURYvAnU/4fDdklGe6v5mpMyBLrOnHjx4ylLcmSz12wlBwSu5namtNmjtlO6xtbO9mbgp0jf7mkH9L6y8HFw&#43;YNwZwCfqw3OPNnexRrWYctSN652rgKHaQmRF1rbsiNPahQcaTjXZ5LRQLMKTxftwiuP&#43;EXhlHxhb//6iWsmLEo3XZ9BqAIqsmkGl&#43;25xyA3NCQFarq1IoYtYzVaVtIfRBecTmE&#43;29YOfomQFAKfbunpNJHJlqjn01&#43;wrf2/p0SG06FA53fvQH3fFmz&#43;2kUIvuqUkQdaWiDxrJwiMQy0QRG849ugEEHs2AjEiH29vRwPjT1u/eP3N4MgJnFc4QSlRCBHNfmh4UjpkIKcTxL9wei5U6aIsDHwmAYRVjW4IORXnRtXoHV4FcaCYQADoOsSTElJtn78fOe27ppqT4K/8hK5JIlak8Swhu1IakMPuTMPycKAMkmOZCGUcRICsGgVxELbU5YGPfh73237H6RxJ8rWFI9Mmnp&#43;s7fA3pm0/8Za0DkesoWUPtuNz3mmZeuLxNAUM5JoUb2KgeVE3F44dmLPMZdMDi6UTA7MZk&#43;XNcFI6yQLxzNCGGlAoWoJTXVCYzaejsLnrVggSBpe/LbpqPR3Bj8/s9sdLFBcR2w7oi8Z6ibC21tIoifNlUinRzTgjDiSjw93z4cZVHAqmslaQcX8eZOZNeOuH/Dxhxtp0wyO6iliGVGGLTQquWcPL/BaJHXHxxPhff3L4ZrQijPSLbEGkf3H0rYOntYC0ZVu3c8XlISXmMSAAmf00tGLF0avzjzSzU0EedzE6L&#43;13wJm9gZ&#43;14oY0JV/8EmQXPd49xyK8HlZGC0Jh5a0VEa&#43;i&#43;g15cfyLb6XfNcW14QgboOv9M66F5Q&#43;jzOo08BMczqIoLiaupABQb4K7XKLuf4PfMiSEZEQ/Z/yw&#43;nFWCxrFTUYa&#43;KEfkwHLKfYVS5oWMA9v6vK76cuNRxYMgVW4&#43;CB2Km3cNIErQFMx0kXTemFLWX/BP7uc1qXAhg7XVmBLv6x/U2R07fVLkTNjQezitSnVsZYcheA&#43;WNHPudtFDYI/YCAOayYXialIXVITV80dJBLn41fL2Dp7DVnfwzx9hsT&#43;qqKdc86NVh&#43;OlzGSE85pYuC6DvQvuuL3rlkyCrqYal9UKm4vmENodXvFwkGsOdcvFVbqiYQiPeIdVohqce/htoux/CaM5bQTa&#43;ezOxAnXx6yzuZlAkmkDPFWYDo&#43;RBIvIRuBkW0RXpXunQRYCRmr7yKq/aMQlIyofeJaA8vrvvIjAqS96fqLvUX6qbZBAiKmIZunUMUkC6oEI9MYG&#43;tP9FH790V2cxJRdjIYeX55qHSOhw/TTeSJauor2JT&#43;v4fBTpPejY&#43;C7SL3eZvUfOyNGGDQodIx2dyKpUIXYlAlvfCVlSwiY9BtE0ABfw3E97GfvJdLUOvzg8zINj8HsOYpFTw0Q3vZPF8HBMhqNM8gPDFcGtslmSIU&#43;iXPp7SaYT7EQZbWRXZOlMrvjRjzugR5vuimufHXACicVJCDcpmel70nnbIHg3cwpMkipBpPI2JX51AhfmyQDKaEwSic2IdZjepcx7BFS4bYNkt&#43;rwQ0JDpDp4vbCWAwiXgV5mMoTiQ4rl2BciNqWyYZyZAnmqzOp7zvU7hcE9WaeZyUSw2V1i28qoTwgaZ2plsdQ/bQs1UtSwLPAUeofi47w4dEt4bA5TewSIZuVLakYbpgN14WzpS2eAYXJIpcasKt1r/ERxy9kY2sSOnhVPm0Tim4Xsxr&#43;6sWStKMnZVidQQEXK1JB6ZaqitP7c7rPByG8ShlAHeTN4N4Mk5vFVDRnmQU6MzNj/gCtZdTKRybVqDaIpRoX9N49VfswuNBijQiSDkfz73CSlISWdkmsVjCyi6XG6N6PSL4Lu6MylptOXfm5Hdnvr2uaCpcd8fV9EqgQcwUuLCd2ff9EmQJLssokdKjcwkvQ01sFTNpPoW&#43;um&#43;GQkyXgN2fG5Fpur0QgIoqvoN1MGngULZ/VIwUwOejmHGskLMoTz0G5y0tEmmzQs4s0U80jdH&#43;XFJHbVmysoX3JZ980Gt978JvrkBUe742BnD5Tf64tN&#43;JKRjhmhGiyd28wr&#43;wA5QUzsBaUQf4Y0MBp9zo4fiLaO89Wsw5zr/H1JzyxYgYbXl3zQAVqY5TJhIfofJ1E2x/005cKdaayOrNgA4eoKdi6nc3UgT10E6YTePw0CHqMQlzVqZdBBE7p4TSZF4JXQvcfGasbRLHBu1hkkyHmi2p7om9G/aAsqfgf8wTj8UBJlbZN8vl46tpeS10jkKK/UFcJkEPF1BUkN041pRAqmCor7x5muAU4Ga1S3zDvLiP28Bh9OpWrZONRH1EEXB3P2LEFw8VeS&#43;1qUlPay8Ya7tjgdeKyYIJ4OwLgxeXdEUksrO3hMds2vYLEfrOzedLFVPB6Y7zJOMJViYZ4a5/U785IucI9mFXaKcIXzM4Ilj112SMe9als2GVjKiI5TmEwFJqsrnvg1TbAl8U63VOs5O82B/MYcehd/uGABsPRaOp5n7SpcyqkrU/AuOJ8XudsIl3JritR0k73Q0TA5RMRULSf/KiBjII3GXRpOlm/FgEv2lZGnws168FZ3XYbcG2mDlrs7f2A76lhq0cpXO/qpc5vK2ofWnnkMj2dIjBD5OFbiePtzNciT0/bPEiYLhmYAapJpc&#43;aa3AVQSgWYPnmnOHwvHAc2iJxo3e4yGN9h9A/KXN6r14UglU&#43;6dJLi/qASqgc3CBQtLDrob3BInn7hGKzjXMtz4bI2X7u4kbPuiGQstItbkYDxp8vaa5K3yzDRD6OQ&#43;qvkKwVanuVPuAHOkCUIcBBeCAnVcy3V1idgNDJkKGsTpoicgK1Ip5YG2ATtURyD1V6DZGaC3zTqBQpX7u/lMs6m&#43;ZwbBhXiGk&#43;QSl8UNJQW4y4Hty/DGOO14Wh5RgdXvNQccYHC6cktYu1E9KJdmxVDiafKPYL8SCX6&#43;h1MzbwGEZxalhFLcHfbBcLab9XUZh45Q3CQER7zC74ABPKvCUVh/R5vTy3W4iDogmz/prdkEl9QLXqgWc/TAXny9JXV9Xyf5F67V6QdJA/OwpzbEAP/FH6QYWvo7/dhiuUr6EqNJbWLnbcckTthV0M//g8h3XrUV9HoEhXyvwjz7gbsjwasG9mbHXkPtY8JVD1TrJN4rVdswWqisCIwaWCAI2WzKPNxy6Z5Rk8p7uJ9HnNFw4oZWFYZF6ZG5kYq6OBAn1jEjoBFN0YaVPiZYyHF/D&#43;B5&#43;bPYfDOq2nVRf6yrLkN4WHf0WjznFp0wajE&#43;7ynFfdWrNX40M3sAGkZNa58RGZEAMeWe5GlQ9HCbguwrcartewTCoOnBZ3kuwRIQseeN//Rn0RTGiq4lTGYUgcdOFEiXzISK&#43;1gDlgX07a&#43;SuEh6f5UVQL372T&#43;0N9Himf7SNbqOvHwpFNqxvfe7CBHrbOYFrz4Iq7JZGLNS4jmLR2H0t8iNgsYgCylvli7iZ37mXwCZFpM15cJWAnUmnYe70RLPLivLvmhtCiNmY/cM0daoy1Zat59VHTfh6XFv3ice/TYmbw4X8rn4p3dkaWGF1eRkTECaRcOcLKQxUrQ&#43;158HPXkKILFGNukOcr1jofD0W/HKBFJrkw2HEDzVX5o3juXaHfSFH&#43;pnCyJNy0uGKX0P8WE2aKE4o3GRdc8gdCiibefBt7smNpVN/ifwEVqRDrSeiwFQ6x9JVf2&#43;VQ3Fl6yPAtOzEByynGV0&#43;&#43;GpfN8HC731Cj7tU9w8BWiks8VsFY0/mz4tntjORV7HYa3gqee9/lxEdQqkmWQAWfNM32&#43;Tafay4SXRRohLCGLX9SXdW3XfRZc/OrITKRYofdH97fAdU8cEMfPtOSPnpOuZjH6j8D5MnruoFQm5Dk5&#43;hOpmaVl/ztMEhamxYgUT0zan/Hb66BLGx2C833DOYB9HU/QBEiFpRqc15zVkP8uz9JMbZ648KWmjjzar6Zch36GlZG4SGQQylG8MDZ6wcmSvbnfZeom2jWmaCDOWbXF5O/zo3XEPUTDRbwZeajdWsGjNauB3vK0Tln9OVZXYJFpUQIURa6jjFwVcCzbzALa5Mwj6&#43;u2niWIcYCzeaq1pmsdmJbfUc2pLJeF2Iv2DR6wiKQRgpSG1MnysOaSyR4RS4rAgvvAC710kPHiIE/Qw1GC1hhKziAZUEzGHE9xWQOmOIxh8UWXFbZlOBLy7riVq8rxxYAZMe4w0Ko1rvCzCsCGT0Ro/8TmEqGADxpbToZe107qqJlla1SDa2j8DgEEKqG8Xesr5fnemrr8H3Aa691D0IlZq/xDuqKoSCusERtS&#43;mKa86Z5HrT/BOmfHsRFX04toSy4j30J3Bk6wPTRU6LEW3Xq97xdaiVTk81lMc0098DLEVW3p0gxZ5&#43;rNMOCfTmAYGsAigV15zxIOS44&#43;zZ3gL3jYT2FHI&#43;lwEf2gRCgjPWKFiU1DnfeetCpMBPf61Hub0UmPa97k2zYbtbejXlffCGDCmFQk/2B8jRsw3K5b39Fp1sBa3yhkGn5sgh32pm9i&#43;fmSPnUCcoUbHdtg2JiwRMdqaMD&#43;tXP/3jjcPMKNyE4QrAOpU1gIqLA8SK/oEIfIwnalj7ZN6/5DOY7&#43;Frrwphnq0ApRoscepimiGRsqugn566FyaPmSFpu5tfMdFry3MhDlHfZIke&#43;YYyuIT73JWvagwOGqlXcMPc&#43;a3vzxK86A1f6k1TA1dDpk2NK6AvLWkOQpbEayhJbkIqnxM67lR&#43;NKhMdgQcmSrPqlmCFONNk&#43;AwWMEGA6IOkAybbixiMQL/axWLB763GBAO47TqH0K99NqwblPKQ2KWa/yZj7hdxw9LeChOlaSgAg2kI3PdZ/PHZal1SXgwNC6JPtTHoknvZ&#43;JIxk1c/DNCvJWOL7rjOOcGuW&#43;CHUVA66QnwP9n9iNgj3DDCryQ7Ljiw9UzoiCN7hUZr6dmgX62ZLCZMjSPg8p&#43;mgQ5CHfhay&#43;LuqXC1BdyyMGyZRmUrdgkSc&#43;w&#43;Lo2SXxncMUiwV/WXuE5Sc55byJ0jGgeBz6kFP2bYa5zEIB94aoqBI1/6zffKBQ1wGu2xTTVphJ/LMynkFyQH1fyk3AZrYiUmPPzlzRUu15ZvbOEp7G3b3eUbN1VkKX/DuCxecS7alh2GlqslUFFoUIdzS4bT2zU8JMljfxQcjp9YejMA73I/eBKGiMW7qXNHiICe3uttHQSkBgpmSauO70XoxmeE6Xr3QlJUA6j0oppYlvQsJrODJ5tlEuaNQKRRbcOQ5G00RwD1OxFvF&#43;t&#43;DMwoZ7TQJeWcGP8fxDc4qkn9skFkyHr21vJhPJNHDaIXi3POEtx/U&#43;5QiXpQ9A0G7ePpVIupfm1G8l/5FlpDEU2CfQBUJLKt/sIVenpkg7EODmfY5TlTAbXPxlnEODR//JORjH7KgjmfjlAFvb6k5Nd/jX&#43;BpInRCo6cBMtaL376HmhQdeO8wjuJFSIUk0KE9T7Fv8mppyP95mWIaMXUvjsvXXdM1/MY4fdt/mAb6SVE0gDD7rb/zs/xfroBzttdnZWsP6x5BKFDZpZw3IinqECiCBs0C4H/l655AlJHVi5PNCxZgNzLcP2oqcqhCxlGO1kXbyudwYFWmagIy98mk0fCDR7Uh&#43;2xL8ww98YdXRCgqhKjpVuYeLlNguIpM1bNNeKn1bJiKa64iid1zkzZPizT2m4VVy316dGoXofQ4dhfeh6JKDpxJk0&#43;qEZgtj5uYZsX4Y&#43;xf7iTrkwA&#43;WlMeVdfAZSdGO8odtGbtSQxMvnLrCoDeRVPazV6dBi0J0DXf8a0gamV/KXcN5ENKwc1SzZy7Ho53bgC9muRbL1r2WdsNI"></div>
+<div class="note-container">
+
+    <div class="note">
+        
+        <h1>小龙虾opencloud初始化能力设计</h1>
+        
+        <p>创建于：2026-03-02 08:57:21</p>
+        <p>标签：
+            
+            
+            <span class="tag">录音卡笔记</span>
+            
+            
+            
+            <span class="tag">opencloud</span>
+            
+            
+            
+            <span class="tag">初始化能力</span>
+            
+            
+            
+            <span class="tag">记忆能力</span>
+            
+            
+        </p>
+        <hr>
+        
+        <div>
+            
+            
+            <div class="attachment">
+                <audio controls>
+                    <source src="files/notesaudio_1a69385d00129178oyOaHZG7.mp3" type="audio/mpeg">
+                    您的浏览器不支持 audio 元素。
+                </audio>
+            </div>
+            
+            
+        </div>
+        
+        <p><p>在创建小龙虾 OpenCloud 的过程中，我习惯性地为每一个小龙虾进行初始化操作，主要是让它具备四种能力。
+1. 记忆能力<br />
+   很多对话和任务是非连续的，所以它需要自主记忆每个任务的当前进展情况和完成情况，以便后续重新开始时，能够知道做到哪里，曾经遇到过哪些问题，最初的规划目标是什么。记忆能力还有一个更重要的想法：有可能这个小龙虾或者助手某一天因为服务原因或其他原因不在了，我希望它的记忆能够持续保存，因此也为它增加了备份功能。如果它记不住事情，所做的事情的意义就会下降。</p>
+
+<ol>
+<li><p>深度思考能力<br />
+在记忆的基础上，我又增加了深度思考能力。深层次的约束方法其实很多，我采用相对简单的方式：在每次对话过程中，不能迎合我，要站在导师或教练的角度，遵循第三方原则，审视我提出的需求，挖掘背后的真实意图和想法，并从中立客观的角度分析其合理性和是否描述清楚。</p></li>
+
+<li><p><strong>洞察与引导能力</strong><br />
+你要洞察我在对话过程中，可能想到的一些角度、维度，甚至是思维的盲区，然后给出建设性的意见和建议。这点非常重要。为什么？因为大语言模型本身是通用或普遍适用的，所以它会产生很多我们在生活中不熟悉或没有帮助的内容，比如“银河”或“公里”这类概念。如果给它限定任务范围，就能避免这个问题。</p></li>
+
+<li><p><strong>自我迭代能力</strong><br />
+最后一个同样重要的初始化要求是自我迭代。它包含两个维度：</p>
+
+<ul>
+<li>生成用户画像（包括我的和它自己的），以及对应的知识图谱和能力树。</li>
+<li>其作用在于，通过每天持续的对话，它能够持续迭代。例如，今天掌握了一个新技能，它就会更新到能力树和知识图谱中。同时，对我提出的一些想法或要求，它也能进行整合与进化。</li>
+</ul></li>
+</ol>
+</p>
+        
+    </div>
+</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', initDetailPage);
+</script>
+</body>
+</html>

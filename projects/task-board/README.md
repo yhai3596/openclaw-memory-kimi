@@ -11,7 +11,7 @@
 |------|------|----------|--------|
 | GitHub 仓库配置 | memory-system | 用户创建仓库 | 🔴 高 |
 | ListenHub API 接入 | media-generation | 用户提供 API Key | 🔴 高 |
-| Get 笔记同步 | content-factory | 用户提供 API Key | 🟡 中 |
+| Get 笔记同步 | content-factory | 用户上传 HTML 文件 | 🟡 中 |
 | 5 台服务器分工 | ai-training | 用户确认方案 | 🟢 低 |
 
 ---
