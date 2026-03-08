@@ -1,0 +1,7 @@
+#!/bin/bash
+# ListenHub 内容生成快捷命令
+# 支持: podcast(播客), video(视频), slides(幻灯片)
+# 用法: ./listenhub [类型] "主题内容" [选项]
+
+cd "$(dirname "$0")/projects/media-generation" || exit 1
+node listenhub.js "$@"
