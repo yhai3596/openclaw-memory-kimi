@@ -10,7 +10,7 @@
 | 任务 | 项目 | 等待原因 | 优先级 |
 |------|------|----------|--------|
 | GitHub 仓库配置 | memory-system | 用户创建仓库 | 🔴 高 |
-| ListenHub API 接入 | media-generation | ✅ API 已连接 | 🔴 高 |
+| ListenHub API 接入 | media-generation | ✅ API 已连接，自动生成并返回下载链接 | 🔴 高 |
 | Get 笔记同步 | content-factory | 用户上传 HTML 文件 | 🟡 中 |
 | 5 台服务器分工 | ai-training | 用户确认方案 | 🟢 低 |
 

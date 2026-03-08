@@ -1,0 +1,6 @@
+#!/bin/bash
+# ListenHub 播客生成快捷命令
+# 用法: ./podcast "主题内容" [声音ID] [模式]
+
+cd "$(dirname "$0")/projects/media-generation" || exit 1
+node generate-podcast.js "$@"
