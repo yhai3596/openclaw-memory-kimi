@@ -10,7 +10,7 @@
 | 任务 | 项目 | 等待原因 | 优先级 |
 |------|------|----------|--------|
 | GitHub 仓库配置 | memory-system | 用户创建仓库 | 🔴 高 |
-| ListenHub API 接入 | media-generation | 用户提供 API Key | 🔴 高 |
+| ListenHub API 接入 | media-generation | ✅ API 已连接 | 🔴 高 |
 | Get 笔记同步 | content-factory | 用户上传 HTML 文件 | 🟡 中 |
 | 5 台服务器分工 | ai-training | 用户确认方案 | 🟢 低 |
 
@@ -22,7 +22,7 @@
 |------|------|------|--------|
 | 记忆自动备份 | memory-system | ✅ 运行中 | 配置远程仓库 |
 | 心跳通知系统 | memory-system | ✅ 运行中 | 无需操作 |
-| ListenHub API 接入 | media-generation | 🟡 API Key 已配置，测试中发现端点问题 | 联系 ListenHub 技术支持确认 API 端点 |
+| ListenHub API 接入 | media-generation | ✅ API 已连接，运行正常 | 无需操作 |
 
 ---
 
@@ -61,6 +61,8 @@ task-board       [██████████] 100% 运行中
 
 ## 📝 今日记录
 
+- 19:38: API 连接测试成功，端点为 https://api.marswave.ai/openapi/v1
+- 19:36: 用户提供 ListenHub API Key，开始测试连接
 - 14:30: ListenHub API Key 已配置，测试中发现端点 404 问题
 - 12:00: 创建任务看板系统
 - 11:57: ListenHub 框架部署完成
