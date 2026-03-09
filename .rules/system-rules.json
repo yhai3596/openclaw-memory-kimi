@@ -1,0 +1,108 @@
+{
+  "version": "1.0",
+  "rules": [
+    {
+      "id": "token-monitor",
+      "name": "Token消耗监控",
+      "description": "每次对话后自动检查token消耗并分级提醒",
+      "trigger": "post-response",
+      "enabled": true,
+      "priority": 100,
+      "config": {
+        "max_tokens": 262000,
+        "thresholds": [
+          {
+            "percentage": 40,
+            "action": "append_hint",
+            "message": "⚡ 上下文已使用 40%+"
+          },
+          {
+            "percentage": 50,
+            "action": "send_warning",
+            "message": "⚠️ 上下文累计消耗已超过 50%，建议考虑新开对话"
+          },
+          {
+            "percentage": 60,
+            "action": "send_urgent",
+            "message": "📛 上下文已使用 60%，强烈建议新开对话"
+          },
+          {
+            "percentage": 70,
+            "action": "summarize_and_suggest",
+            "auto_summarize": true
+          }
+        ]
+      }
+    },
+    {
+      "id": "session-init",
+      "name": "会话启动检查",
+      "description": "每次新会话自动加载必要文件和配置",
+      "trigger": "session-start",
+      "enabled": true,
+      "priority": 90,
+      "config": {
+        "required_files": [
+          "SOUL.md",
+          "USER.md"
+        ],
+        "optional_files": [
+          "memory/YYYY-MM-DD.md",
+          "MEMORY.md"
+        ],
+        "auto_load_profile": true
+      }
+    },
+    {
+      "id": "thinking-mode",
+      "name": "深度思考自动识别",
+      "description": "根据任务复杂度自动启用thinking模式",
+      "trigger": "pre-processing",
+      "enabled": true,
+      "priority": 80,
+      "config": {
+        "auto_enable_keywords": [
+          "分析", "设计", "规划", "策略", "架构",
+          "analyze", "design", "plan", "strategy", "architecture"
+        ],
+        "auto_enable_patterns": [
+          "多步骤任务",
+          "搜索+整合",
+          "代码编写",
+          "系统设计",
+          "长文档处理"
+        ],
+        "threshold": {
+          "complexity_score": 0.7
+        }
+      }
+    },
+    {
+      "id": "memory-backup",
+      "name": "记忆和备份",
+      "description": "HEARTBEAT自动执行Git备份和记忆管理",
+      "trigger": "heartbeat",
+      "enabled": true,
+      "priority": 70,
+      "config": {
+        "git_backup": true,
+        "daily_notes": true,
+        "memory_update": true
+      }
+    },
+    {
+      "id": "iteration-check",
+      "name": "持续迭代检查",
+      "description": "定期检查技能更新和系统优化机会",
+      "trigger": "heartbeat",
+      "enabled": true,
+      "priority": 60,
+      "config": {
+        "check_skill_updates": true,
+        "check_subagent_status": true,
+        "extract_patterns": true,
+        "update_user_profile": true
+      }
+    }
+  ]
+}
