@@ -736,3 +736,7 @@ Thu Mar 12 02:01:31 AM CST 2026: 备份失败
 [2026-03-12 02:29:05] 开始自动备份...
 [master 5653a93] Auto-backup: 2026-03-12 02:29:05
  1 file changed, 2 insertions(+)
+fatal: unable to access 'https://github.com/yhai3596/openclaw-memory-kimi.git/': Failed to connect to github.com port 443 after 135584 ms: Couldn't connect to server
+[2026-03-12 02:29:05] 推送失败，请检查网络或 Token
+[2026-03-12 02:29:05] 备份完成
+Thu Mar 12 02:31:28 AM CST 2026: 备份失败
