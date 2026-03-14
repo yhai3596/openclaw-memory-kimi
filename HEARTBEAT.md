@@ -1,5 +1,11 @@
 # HEARTBEAT.md - 系统心跳检查
 
+## Self-Improving Check
+
+- Read `./skills/self-improving/heartbeat-rules.md`
+- Use `~/self-improving/heartbeat-state.md` for last-run markers and action notes
+- If no file inside `~/self-improving/` changed since the last reviewed change, return `HEARTBEAT_OK`
+
 ## 自动执行项（无需询问用户）
 
 执行完整的心跳检查:

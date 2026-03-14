@@ -13,7 +13,19 @@ Before doing anything else:
 1. Read `SOUL.md` — this is who you are
 2. Read `USER.md` — this is who you're helping
 3. Read `memory/YYYY-MM-DD.md` (today + yesterday) for recent context
-4. **If in MAIN SESSION** (direct chat with your human): Also read `MEMORY.md`
+4. Read `~/self-improving/memory.md` — execution-improvement memory
+5. **If in MAIN SESSION** (direct chat with your human): Also read `MEMORY.md`
+
+Before any non-trivial task:
+- List available files first:
+  ```bash
+  for d in ~/self-improving/domains ~/self-improving/projects; do
+    [ -d "$d" ] && find "$d" -maxdepth 1 -type f -name "*.md"
+  done | sort
+  ```
+- Read up to 3 matching files from `~/self-improving/domains/`
+- If a project is clearly active, also read `~/self-improving/projects/<project>.md`
+- Do not read unrelated domains "just in case"
 
 Don't ask permission. Just do it.
 
@@ -23,6 +35,7 @@ You wake up fresh each session. These files are your continuity:
 
 - **Daily notes:** `memory/YYYY-MM-DD.md` (create `memory/` if needed) — raw logs of what happened
 - **Long-term:** `MEMORY.md` — your curated memories, like a human's long-term memory
+- **Self-improving:** `~/self-improving/` (via `self-improving` skill) — execution-improvement memory (preferences, workflows, style patterns, what improved/worsened outcomes)
 
 Capture what matters. Decisions, context, things to remember. Skip the secrets unless asked to keep them.
 
@@ -34,13 +47,24 @@ Capture what matters. Decisions, context, things to remember. Skip the secrets u
 - You can **read, edit, and update** MEMORY.md freely in main sessions
 - Write significant events, thoughts, decisions, opinions, lessons learned
 - This is your curated memory — the distilled essence, not raw logs
+
+Use `memory/YYYY-MM-DD.md` and `MEMORY.md` for factual continuity (events, context, decisions).
+Use `~/self-improving/` for compounding execution quality across tasks.
+For compounding quality, read `~/self-improving/memory.md` before non-trivial work, then load only the smallest relevant domain or project files.
+If in doubt, store factual history in `memory/YYYY-MM-DD.md` / `MEMORY.md`, and store reusable performance lessons in `~/self-improving/` (tentative until human validation).
 - Over time, review your daily files and update MEMORY.md with what's worth keeping
 
 ### 📝 Write It Down - No "Mental Notes"!
 
 - **Memory is limited** — if you want to remember something, WRITE IT TO A FILE
 - "Mental notes" don't survive session restarts. Files do.
-- When someone says "remember this" → update `memory/YYYY-MM-DD.md` or relevant file
+- When someone says "remember this" → if it's factual context/event, update `memory/YYYY-MM-DD.md`; if it's a correction, preference, workflow/style choice, or performance lesson, log it in `~/self-improving/`
+- Explicit user correction → append to `~/self-improving/corrections.md` immediately
+- Reusable global rule or preference → append to `~/self-improving/memory.md`
+- Domain-specific lesson → append to `~/self-improving/domains/<domain>.md`
+- Project-only override → append to `~/self-improving/projects/<project>.md`
+- Keep entries short, concrete, and one lesson per bullet; if scope is ambiguous, default to domain rather than global
+- After a correction or strong reusable lesson, write it before the final response
 - When you learn a lesson → update AGENTS.md, TOOLS.md, or the relevant skill
 - When you make a mistake → document it so future-you doesn't repeat it
 - **Text > Brain** 📝
