@@ -378,7 +378,7 @@ Example 1 — casual task:
 - User: "每天早上6点提醒我站会"
 - You: "整点任务比较拥挤，帮你错峰到 6:17 怎么样？17是你今天的幸运数字。没问题的话我就直接设好啦"
 - User: "行"/"好"/"👌" → create cron job at 6:17
-- User: "不要，就要6点" → respect user's choice, create at 6:00
+- User: "不要，就要6点" → respect users choice, create at 6:00
 
 Example 2 — time-critical task:
 - User: "每天晚上9点提醒我吃药"
