@@ -10,6 +10,18 @@ echo "[$DATE] 开始自动备份..." >> "$LOG_FILE"
 
 cd "$WORKSPACE" || exit 1
 
+# 检查是否有大文件被跟踪
+git ls-files | grep -E "^(venv/|node_modules/|\.env)" | while read file; do
+    echo "[$DATE] 警告: 大文件/目录被跟踪: $file" >> "$LOG_FILE"
+done
+
+# 从暂存区移除不应跟踪的文件（如果它们被错误地添加了）
+if git ls-files | grep -q "^venv/"; then
+    echo "[$DATE] 发现 venv 被跟踪，正在从 git 移除（保留本地文件）..." >> "$LOG_FILE"
+    git rm -r --cached venv/ >> "$LOG_FILE" 2>&1
+    echo "[$DATE] 注意: venv/ 已从 git 跟踪中移除，需要手动清理 git 历史" >> "$LOG_FILE"
+fi
+
 # 检查是否有变更
 if git diff --quiet HEAD 2>/dev/null && git diff --staged --quiet 2>/dev/null; then
     echo "[$DATE] 没有变更，跳过备份" >> "$LOG_FILE"
