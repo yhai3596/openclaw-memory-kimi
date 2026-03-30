@@ -18180,3 +18180,14 @@ Mon Mar 30 01:00:47 PM CST 2026: 备份失败
 Mon Mar 30 01:30:24 PM CST 2026: 备份失败
 Mon Mar 30 02:00:20 PM CST 2026: 备份失败
 [2026-03-30 14:29:05] 开始自动备份...
+[master 76d4584] Auto-backup: 2026-03-30 14:29:05
+ 1 file changed, 2 insertions(+)
+remote: error: Trace: d22d5a010fc0f99c92f63bff58fdbb0162960a2e9ceae365b5446d6b53ad951c        
+remote: error: See https://gh.io/lfs for more information.        
+remote: error: File venv/lib/python3.12/site-packages/patchright/driver/node is 117.48 MB; this exceeds GitHub's file size limit of 100.00 MB        
+remote: error: GH001: Large files detected. You may want to try Git Large File Storage - https://git-lfs.github.com.        
+To https://github.com/yhai3596/openclaw-memory-kimi.git
+ ! [remote rejected] master -> master (pre-receive hook declined)
+error: failed to push some refs to 'https://github.com/yhai3596/openclaw-memory-kimi.git'
+[2026-03-30 14:29:05] 推送失败，请检查网络或 Token
+[2026-03-30 14:29:05] 备份完成
