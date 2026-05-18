@@ -1,0 +1,965 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="UTF-8">
+<title>夙愿的AI实验室 · 2026-04-01 日报（共 6 版 · A3）</title>
+<style>
+
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;700;900&family=Noto+Sans+SC:wght@400;700;900&family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Old+Standard+TT:wght@400;700&display=swap');
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html, body {
+  background: #2a241c;
+  font-family: "Noto Serif SC", "Songti SC", "STSong", serif;
+  color: #000;
+  font-size: 11px;
+  line-height: 1.65;
+}
+
+@page { size: A3 portrait; margin: 0; }
+@media print {
+  html, body { background: #fff; }
+  .page {
+    margin: 0 !important;
+    box-shadow: none !important;
+    page-break-after: always;
+    page-break-inside: avoid;
+    break-after: page;
+    break-inside: avoid;
+  }
+  .page:last-child { page-break-after: auto; break-after: auto; }
+}
+
+.page {
+  width: 1123px;
+  min-height: 1587px;
+  margin: 20px auto;
+  padding: 16px 22px 18px;
+  background: #fdfcf8;
+  box-shadow: 0 8px 40px rgba(0,0,0,0.25);
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.grid-12 { display: grid; grid-template-columns: repeat(12, 1fr); gap: 0 14px; }
+.col-span-4 { grid-column: span 4; }
+.col-span-6 { grid-column: span 6; }
+.col-span-8 { grid-column: span 8; }
+.col-span-12 { grid-column: span 12; }
+
+/* 报头（第 1 版） */
+.masthead-row {
+  display: grid;
+  grid-template-columns: 1.3fr 0.65fr 2.2fr;
+  gap: 18px;
+  align-items: stretch;
+  padding-bottom: 14px;
+  border-bottom: 2px solid #000;
+  margin-bottom: 14px;
+}
+.mh-left {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding-right: 14px;
+  padding-top: 4px;
+  text-align: center;
+}
+.mh-name-block { text-align: center; }
+.mh-name {
+  font-family: "Noto Serif SC", "Songti SC", "STSong", serif;
+  font-weight: 900;
+  color: #c41e1e;
+  margin-bottom: 6px;
+  text-align: center;
+  line-height: 1.0;
+}
+.mn-r1, .mn-r2 {
+  display: block;
+  font-size: 82px;
+  letter-spacing: 6px;
+  padding-left: 6px;
+}
+.mn-r2 { margin-top: 4px; }
+.mh-pinyin {
+  font-family: "Playfair Display", "Old Standard TT", serif;
+  font-size: 14px;
+  letter-spacing: 5px;
+  color: #c41e1e;
+  font-weight: 700;
+  white-space: nowrap;
+  text-align: center;
+}
+.mh-tag {
+  font-family: "Old Standard TT", serif;
+  font-size: 11px;
+  color: #555;
+  letter-spacing: 1.8px;
+  text-align: center;
+}
+.mh-slogan-block {
+  padding: 12px 0;
+  border-top: 1px solid rgba(0,0,0,0.5);
+  border-bottom: 1px solid rgba(0,0,0,0.5);
+}
+.mh-slogan-en {
+  font-family: "Old Standard TT", "Playfair Display", serif;
+  font-size: 10px;
+  letter-spacing: 4px;
+  color: #555;
+  font-style: italic;
+  margin-bottom: 6px;
+}
+.mh-slogan {
+  font-family: "Songti SC", "Noto Serif SC", serif;
+  font-size: 14px;
+  letter-spacing: 4px;
+  line-height: 1.5;
+  color: #222;
+  font-weight: 700;
+}
+.mh-box {
+  border: 1px solid #000;
+  padding: 14px 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  text-align: center;
+  font-family: "Songti SC", serif;
+  color: #000;
+  font-size: 11px;
+}
+.mh-box-line { font-size: 12.5px; letter-spacing: 1.5px; margin: 2px 0; }
+.mh-box-big {
+  font-size: 50px;
+  font-weight: 900;
+  line-height: 1.05;
+  margin: 4px 0;
+  font-family: "Songti SC", serif;
+}
+.mh-box-sep { height: 8px; }
+.mh-box-small { font-size: 11.5px; letter-spacing: 0.8px; margin: 2px 0; color: #222; }
+.mh-right {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding-left: 4px;
+  padding-bottom: 16px;
+}
+.mh-kicker {
+  font-family: "Songti SC", serif;
+  font-size: 11px;
+  letter-spacing: 3px;
+  color: #555;
+  margin-bottom: 6px;
+}
+.mh-headline {
+  font-family: "Songti SC", "Noto Serif SC", serif;
+  font-weight: 900;
+  font-size: 34px;
+  letter-spacing: 3px;
+  line-height: 1.2;
+  margin-bottom: 12px;
+  color: #000;
+}
+.mh-lead {
+  font-family: "Noto Serif SC", "Songti SC", serif;
+  font-size: 11px;
+  line-height: 1.75;
+  text-align: justify;
+  column-count: 4;
+  column-gap: 12px;
+  column-rule: 1px solid rgba(0,0,0,0.25);
+  color: #000;
+}
+
+/* 简版页眉（第 2-4 版） */
+.page-header {
+  border-bottom: 2px solid #000;
+  padding: 6px 2px;
+  margin-bottom: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: "Old Standard TT", serif;
+}
+.page-header .ph-left { display: flex; gap: 12px; align-items: baseline; }
+.ph-num { font-family: "Noto Sans SC", sans-serif; font-size: 18px; font-weight: 900; color: #000; letter-spacing: 2px; }
+.ph-sec { font-size: 10px; letter-spacing: 3px; color: #555; text-transform: uppercase; }
+.page-header .ph-mid { font-family: "Noto Sans SC", "PingFang SC", "Heiti SC", sans-serif; font-size: 16px; font-weight: 900; letter-spacing: 6px; }
+.page-header .ph-right { text-align: right; font-size: 9.5px; letter-spacing: 1.5px; line-height: 1.4; color: #555; text-transform: uppercase; }
+
+.page-banner-title {
+  font-family: "Songti SC", "Noto Serif SC", serif;
+  font-size: 46px;
+  font-weight: 900;
+  letter-spacing: 3px;
+  text-align: center;
+  line-height: 1.18;
+  padding: 14px 0 10px;
+  border-top: 1px solid #000;
+  border-bottom: 1px solid #000;
+  margin: 8px 0 14px;
+  word-break: keep-all;
+}
+.page-banner-title .pbt-deck {
+  display: block;
+  font-family: "Songti SC", "Noto Serif SC", serif;
+  font-size: 36px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  margin-top: 8px;
+  color: #1a1815;
+  line-height: 1.22;
+  word-break: keep-all;
+}
+.pbt-en {
+  display: block;
+  font-family: "Playfair Display", serif;
+  font-weight: 400;
+  font-style: italic;
+  font-size: 14px;
+  letter-spacing: 2.5px;
+  color: #555;
+  margin-top: 6px;
+}
+
+/* Hero 主稿 */
+.hero { display: flex; flex-direction: column; padding-right: 14px; }
+.hero-eyebrow { font-family: "Old Standard TT", serif; font-size: 10.5px; letter-spacing: 5px; color: #c41e1e; font-weight: 700; text-transform: uppercase; margin-bottom: 6px; }
+.hero-title { font-family: "Songti SC", "Noto Serif SC", serif; font-size: 30px; font-weight: 900; letter-spacing: 2.5px; line-height: 1.22; margin-bottom: 8px; color: #000; }
+.hero-title .deck { display: block; font-family: "Songti SC", serif; font-style: italic; font-weight: 400; font-size: 17px; letter-spacing: 1.5px; line-height: 1.4; color: #555; margin-top: 5px; }
+.hero-meta { font-family: "Old Standard TT", serif; font-size: 10.5px; letter-spacing: 2px; color: #333; padding: 5px 0; border-top: 1px solid rgba(0,0,0,0.6); border-bottom: 1px solid rgba(0,0,0,0.6); display: flex; gap: 18px; }
+.hero-meta .time { font-weight: 700; }
+.hero-meta .badge { font-family: "Songti SC", serif; color: #c41e1e; font-weight: 700; }
+.hero-cast { display: flex; flex-wrap: wrap; gap: 4px 12px; padding: 6px 0 8px; border-bottom: 1px solid rgba(0,0,0,0.2); margin-bottom: 10px; }
+.cast-chip { display: inline-flex; align-items: center; gap: 5px; font-family: "Songti SC", serif; font-size: 10.5px; font-weight: 700; color: #c41e1e; letter-spacing: 0.5px; }
+.cast-chip .avatar { border-radius: 50%; border: 1px solid #000; object-fit: cover; }
+.avatar-text { display: inline-block; text-align: center; background: #fdfcf8; border: 1px solid #000; font-family: "Songti SC", serif; color: #000; font-weight: 700; }
+.hero-body { font-family: "Noto Serif SC", "Songti SC", serif; font-size: 11px; line-height: 1.78; text-align: justify; color: #000; margin-bottom: 8px; }
+.hero-body.four-col { column-count: 4; column-gap: 14px; column-rule: 1px solid rgba(0,0,0,0.2); }
+.hero-body.three-col { column-count: 3; column-gap: 14px; column-rule: 1px solid rgba(0,0,0,0.2); }
+.hero-body p { text-indent: 0; margin-bottom: 4px; }
+.hero-body p::first-letter { font-size: 22px; font-family: "Songti SC", serif; font-weight: 900; color: #c41e1e; float: left; line-height: 1; padding-right: 4px; padding-top: 2px; }
+.story-break { text-align: center; font-family: "Songti SC", serif; font-size: 11px; letter-spacing: 5px; color: #c41e1e; font-weight: 700; padding: 4px 0; margin: 6px 0; column-span: all; border-top: 1px solid rgba(0,0,0,0.3); border-bottom: 1px solid rgba(0,0,0,0.3); }
+
+.quotes-box { margin: 8px 0; padding: 14px 14px; border-left: 3px solid #c41e1e; background: rgba(196,30,30,0.04); display: flex; flex-direction: column; gap: 8px; }
+.hero .quotes-box { flex: 1; justify-content: space-around; }
+.quotes-box .q { font-family: "Songti SC", "Noto Serif SC", serif; font-size: 13px; line-height: 1.55; font-style: italic; color: #000; }
+.quotes-box .who { font-family: "Old Standard TT", serif; font-size: 10px; font-style: normal; color: #c41e1e; font-weight: 700; margin-left: 4px; }
+
+.produced { font-family: "Songti SC", serif; font-size: 10.5px; line-height: 1.5; letter-spacing: 0.5px; padding: 7px 0; border-top: 2px solid #c41e1e; border-bottom: 2px solid #c41e1e; color: #000; margin-top: auto; }
+.produced b { color: #c41e1e; letter-spacing: 2px; }
+
+/* 第 1 版 */
+.p1-hero-row { margin-bottom: 14px; }
+.p1-hero { border-right: 1px solid rgba(0,0,0,0.3); display: flex; flex-direction: column; }
+.p1-aside { display: flex; flex-direction: column; padding-left: 6px; }
+.codex-figure { margin-bottom: 12px; display: flex; flex-direction: column; }
+/* v2.2: figure 默认按图片比例自适应；可通过 layout-plan figure.style 覆盖 */
+.codex-figure img { width: 100%; display: block; border: 1.5px solid #000; max-height: 420px; object-fit: contain; background: #2a3344; }
+.codex-figure figcaption { padding: 6px 2px 8px; border-bottom: 1px solid rgba(0,0,0,0.3); }
+.cf-eyebrow { font-family: "Old Standard TT", serif; font-size: 10px; letter-spacing: 4px; color: #c41e1e; font-weight: 700; text-transform: uppercase; margin-bottom: 4px; }
+.cf-text { font-family: "Noto Serif SC", serif; font-size: 10.5px; line-height: 1.55; text-align: justify; color: #000; }
+.cf-credit { font-family: "Old Standard TT", serif; font-size: 9px; letter-spacing: 1.2px; color: #555; font-style: italic; padding-top: 4px; }
+.side-banner { background: #000; color: #fdfcf8; font-family: "Noto Sans SC", sans-serif; font-size: 12px; font-weight: 900; letter-spacing: 4px; text-align: center; padding: 6px 0; margin-bottom: 8px; }
+.brief-item { border-bottom: 1px solid rgba(0,0,0,0.2); padding: 6px 4px; }
+.brief-item:last-child { border-bottom: none; }
+.brief-time { font-family: "Old Standard TT", serif; font-size: 10px; letter-spacing: 2px; color: #c41e1e; font-weight: 700; }
+.brief-title { font-family: "Songti SC", "Noto Serif SC", serif; font-size: 13px; font-weight: 900; letter-spacing: 1px; line-height: 1.3; margin: 2px 0 3px; color: #000; }
+.brief-desc { font-family: "Noto Serif SC", serif; font-size: 10.5px; line-height: 1.55; color: #222; }
+.side-quote { margin-top: auto; padding: 12px 14px; background: #000; color: #fdfcf8; text-align: center; }
+.sq-text { font-family: "Songti SC", "Noto Serif SC", serif; font-size: 30px; font-weight: 900; letter-spacing: 8px; line-height: 1.3; }
+.sq-attr { font-family: "Old Standard TT", serif; font-size: 10px; letter-spacing: 2px; color: #aaa; margin-top: 6px; }
+
+.photo-strip { margin-top: 14px; border: 1.5px solid #000; }
+.ps-banner { background: #000; color: #fdfcf8; font-family: "Noto Sans SC", sans-serif; font-size: 13px; font-weight: 900; letter-spacing: 5px; text-align: center; padding: 6px 0; }
+.ps-grid { display: grid; grid-template-columns: repeat(8, 1fr); gap: 0; padding: 10px 8px; }
+.ps-item { display: flex; flex-direction: column; align-items: center; text-align: center; padding: 0 4px; border-right: 1px solid rgba(0,0,0,0.15); }
+.ps-item:last-child { border-right: none; }
+.ps-avatar { border-radius: 50%; border: 1.5px solid #000; margin-bottom: 6px; }
+.ps-name { font-family: "Noto Sans SC", "PingFang SC", sans-serif; font-size: 11px; font-weight: 900; line-height: 1.2; margin-bottom: 3px; }
+.ps-tag { font-size: 9px; color: #c41e1e; letter-spacing: 0.3px; line-height: 1.35; font-family: "Songti SC", serif; }
+.ps-caption { text-align: center; font-family: "Songti SC", serif; font-style: italic; font-size: 10px; letter-spacing: 1.5px; color: #555; padding: 4px 0 8px; border-top: 1px solid rgba(0,0,0,0.2); }
+
+.day-stats { margin-top: 12px; border: 1.5px solid #000; }
+.ds-banner { background: #000; color: #fdfcf8; font-family: "Noto Sans SC", sans-serif; font-size: 12px; font-weight: 900; letter-spacing: 4px; text-align: center; padding: 5px 0; }
+.ds-grid { display: grid; grid-template-columns: repeat(8, 1fr); padding: 8px 6px; }
+.ds-item { text-align: center; border-right: 1px solid rgba(0,0,0,0.18); padding: 2px 6px; }
+.ds-item:last-child { border-right: none; }
+.ds-item .n { font-family: "Playfair Display", serif; font-size: 28px; font-weight: 900; line-height: 1; color: #c41e1e; }
+.ds-item .l { font-family: "Songti SC", serif; font-size: 10px; letter-spacing: 1px; color: #333; margin-top: 4px; }
+
+/* 第 2 版 · 人物卡 */
+.p2-body { margin-bottom: 14px; }
+.person-card-col { display: flex; flex-direction: column; padding-right: 14px; border-right: 1px solid rgba(0,0,0,0.3); }
+.pc-eyebrow { font-family: "Old Standard TT", serif; font-size: 10.5px; letter-spacing: 5px; color: #c41e1e; font-weight: 700; text-transform: uppercase; text-align: center; padding-bottom: 6px; border-bottom: 2px solid #c41e1e; margin-bottom: 8px; }
+.person-card-figure { margin-bottom: 10px; }
+/* v2.2: 高度可被 layout-plan person_card.style 覆盖 */
+.person-card-figure img { width: 100%; display: block; border: 1.5px solid #000; max-height: 600px; object-fit: cover; object-position: center top; }
+.pc-quote-block { background: #1f2d4a; color: #fdfcf8; padding: 10px 12px; margin-bottom: 10px; }
+.pc-qb-title { font-family: "Noto Sans SC", sans-serif; font-size: 11px; font-weight: 900; letter-spacing: 1.5px; line-height: 1.4; margin-bottom: 8px; padding-bottom: 6px; border-bottom: 1px solid rgba(255,255,255,0.3); color: #fdfcf8; }
+.jl-line { display: flex; gap: 8px; align-items: baseline; margin-bottom: 5px; }
+.jl-t { font-family: "Old Standard TT", serif; font-size: 10.5px; font-weight: 700; color: #c4a574; letter-spacing: 1px; flex: 0 0 auto; }
+.jl-q { font-family: "Songti SC", serif; font-size: 11.5px; font-style: italic; line-height: 1.45; color: #fdfcf8; }
+.pc-caption { font-family: "Songti SC", serif; font-size: 10.5px; line-height: 1.55; color: #222; padding: 8px 4px 0; border-top: 1px solid rgba(0,0,0,0.3); margin-top: auto; }
+.pc-caption b { color: #c41e1e; letter-spacing: 1px; }
+.p2-hero { padding-left: 6px; display: flex; flex-direction: column; }
+
+.produced-list { margin-top: 12px; border: 1.5px solid #000; }
+.pl-banner { background: #1f2d4a; color: #fdfcf8; font-family: "Noto Sans SC", sans-serif; font-size: 12px; font-weight: 900; letter-spacing: 4px; text-align: center; padding: 5px 0; }
+.pl-grid { padding: 10px 12px; gap: 0 18px; }
+.pl-item { display: flex; gap: 10px; align-items: flex-start; border-right: 1px solid rgba(0,0,0,0.18); padding-right: 14px; }
+.pl-item:last-child { border-right: none; }
+.pl-no { font-family: "Playfair Display", serif; font-size: 28px; font-weight: 900; color: #c41e1e; line-height: 1; flex: 0 0 auto; }
+.pl-text { font-family: "Noto Serif SC", serif; font-size: 10.5px; line-height: 1.55; color: #000; }
+.pl-text b { font-family: "Noto Sans SC", sans-serif; font-weight: 900; font-size: 12px; letter-spacing: 0.5px; display: inline-block; margin-bottom: 3px; }
+
+/* timeline-strip */
+.timeline-strip { margin-top: 12px; border: 1.5px solid #000; }
+.ts-banner { background: #c41e1e; color: #fdfcf8; font-family: "Noto Sans SC", sans-serif; font-size: 12px; font-weight: 900; letter-spacing: 4px; text-align: center; padding: 5px 0; }
+.ts-grid { display: grid; grid-template-columns: repeat(6, 1fr); padding: 12px 14px; gap: 0 14px; }
+.ts-item { border-right: 1px solid rgba(0,0,0,0.18); padding-right: 12px; display: flex; flex-direction: column; }
+.ts-item:last-child { border-right: none; }
+.ts-time { font-family: "Playfair Display", serif; font-size: 17px; font-weight: 900; color: #c41e1e; letter-spacing: 1px; line-height: 1; margin-bottom: 5px; }
+.ts-text { font-family: "Noto Serif SC", serif; font-size: 10.5px; line-height: 1.5; color: #000; flex: 1; }
+.ts-who { font-family: "Songti SC", serif; font-size: 9.5px; letter-spacing: 0.5px; color: #555; margin-top: 4px; font-style: italic; }
+
+.quote-wall { margin-top: 12px; border: 1.5px solid #000; display: flex; flex-direction: column; flex: 1; }
+.qw-banner { background: #1f2d4a; color: #fdfcf8; font-family: "Noto Sans SC", sans-serif; font-size: 12px; font-weight: 900; letter-spacing: 4px; text-align: center; padding: 5px 0; }
+.qw-grid { display: grid; grid-template-columns: repeat(4, 1fr); padding: 14px 14px; gap: 14px 18px; flex: 1; align-content: space-around; }
+.qw-item { border-left: 3px solid #c41e1e; padding: 4px 0 4px 12px; margin: 0; display: flex; flex-direction: column; justify-content: space-between; }
+.qw-item .t { font-family: "Noto Serif SC", "Songti SC", serif; font-size: 11.5px; line-height: 1.5; font-style: italic; color: #000; }
+.qw-item cite { display: inline-block; margin-top: 5px; font-family: "Old Standard TT", serif; font-style: normal; font-size: 10px; letter-spacing: 1.5px; color: #1f2d4a; font-weight: 700; }
+
+/* 第 3 版 · banner-image */
+.banner-image-top { display: grid; grid-template-columns: 1.4fr 1fr; gap: 16px; margin-bottom: 14px; border: 1.5px solid #000; padding: 0; background: #fdfcf8; }
+/* v2.2: 高度自适应，可被 layout-plan banner_image.style 覆盖 */
+.banner-image-top img { width: 100%; max-height: 420px; display: block; object-fit: cover; border-right: 1.5px solid #000; }
+.banner-image-top figcaption { padding: 14px 16px 14px 4px; display: flex; flex-direction: column; justify-content: center; }
+.bit-eyebrow { font-family: "Old Standard TT", serif; font-size: 11px; letter-spacing: 5px; color: #c41e1e; font-weight: 700; text-transform: uppercase; margin-bottom: 6px; }
+.bit-title { font-family: "Songti SC", "Noto Serif SC", serif; font-size: 22px; font-weight: 900; letter-spacing: 2px; line-height: 1.25; margin-bottom: 8px; color: #000; }
+.bit-text { font-family: "Noto Serif SC", serif; font-size: 10.5px; line-height: 1.65; text-align: justify; color: #000; }
+.bit-credit { font-family: "Old Standard TT", serif; font-size: 9.5px; letter-spacing: 1.5px; color: #555; font-style: italic; padding-top: 8px; margin-top: 8px; border-top: 1px solid rgba(0,0,0,0.3); }
+.p3-hero { margin-bottom: 14px; }
+
+.letters { border: 1.5px solid #000; margin-top: 12px; }
+.lt-banner { background: #c41e1e; color: #fdfcf8; font-family: "Noto Sans SC", sans-serif; font-size: 12px; font-weight: 900; letter-spacing: 4px; text-align: center; padding: 5px 0; }
+.lt-grid { padding: 10px 12px; gap: 0 18px; }
+.lt-item { border-right: 1px solid rgba(0,0,0,0.18); padding-right: 14px; }
+.lt-item:last-child { border-right: none; }
+.lt-text { font-family: "Songti SC", serif; font-style: italic; font-size: 12px; line-height: 1.55; color: #000; margin-bottom: 6px; }
+.lt-from { font-family: "Old Standard TT", serif; font-size: 10px; letter-spacing: 1.5px; color: #c41e1e; font-weight: 700; }
+
+.lingo { margin-top: 12px; border: 1.5px solid #000; display: flex; flex-direction: column; flex: 1; }
+.lg-banner { background: #c41e1e; color: #fdfcf8; font-family: "Noto Sans SC", sans-serif; font-size: 13px; font-weight: 900; letter-spacing: 5px; text-align: center; padding: 6px 0; }
+.lg-grid { display: grid; grid-template-columns: repeat(3, 1fr); padding: 10px 14px; gap: 10px 20px; flex: 1; align-content: space-around; }
+.lg-item { display: grid; grid-template-columns: auto 1fr; gap: 0 10px; align-items: start; }
+.lg-item .w { font-family: "Noto Sans SC", "PingFang SC", sans-serif; font-size: 19px; font-weight: 900; color: #c41e1e; letter-spacing: 1px; line-height: 1.1; }
+.lg-item .d { font-family: "Noto Serif SC", serif; font-size: 11px; line-height: 1.65; color: #222; }
+
+/* 第 4 版 */
+.hl-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 6px 18px; padding: 8px 0 10px; border-bottom: 2px solid #000; }
+.hl { display: grid; grid-template-columns: auto 1fr; gap: 0 10px; align-items: flex-start; padding: 2px 0; }
+.hl-avatar { border-radius: 50%; border: 1.5px solid #000; object-fit: cover; }
+.hl-info { display: flex; flex-direction: column; gap: 2px; }
+.hl-name { font-family: "Noto Sans SC", "PingFang SC", sans-serif; font-size: 14px; font-weight: 900; letter-spacing: 1px; color: #000; }
+.hl-tag { font-family: "Songti SC", serif; font-size: 10px; color: #c41e1e; font-weight: 700; letter-spacing: 0.5px; }
+.hl-desc { font-family: "Noto Serif SC", serif; font-size: 10px; line-height: 1.5; color: #222; margin-top: 2px; }
+
+.appendix-bar { background: #000; color: #fdfcf8; font-family: "Noto Sans SC", sans-serif; font-size: 11px; font-weight: 900; letter-spacing: 5px; text-align: center; padding: 4px 0; margin-top: 8px; }
+.appendix-grid { padding: 8px 0 0; gap: 0 22px; }
+.appendix-col { padding: 0 4px; border-right: 1px solid rgba(0,0,0,0.25); }
+.appendix-col:last-child { border-right: none; }
+.apx-title { font-family: "Songti SC", "Noto Serif SC", serif; font-size: 14px; font-weight: 900; letter-spacing: 3px; color: #c41e1e; text-align: center; padding-bottom: 4px; border-bottom: 1.5px solid #c41e1e; margin-bottom: 6px; }
+.sop { margin-bottom: 6px; padding: 4px 4px; border-bottom: 1px solid rgba(0,0,0,0.2); }
+.sop:last-child { border-bottom: none; margin-bottom: 0; }
+.sop-title { font-family: "Noto Sans SC", sans-serif; font-size: 11px; font-weight: 900; letter-spacing: 0.5px; line-height: 1.3; margin-bottom: 2px; }
+.sop-meta { font-family: "Old Standard TT", serif; font-size: 9.5px; letter-spacing: 1px; color: #c41e1e; font-weight: 700; margin-bottom: 3px; }
+.sop-steps { font-family: "Noto Serif SC", serif; font-size: 10px; line-height: 1.5; padding-left: 16px; color: #000; }
+.sop-steps li { margin-bottom: 1px; list-style-type: decimal; }
+.sop-out { font-family: "Songti SC", serif; font-size: 10px; line-height: 1.45; padding: 3px 4px; margin-top: 3px; border-top: 1px solid rgba(196,30,30,0.4); color: #000; }
+.sop-out b { color: #c41e1e; letter-spacing: 1.5px; }
+.qa { margin-bottom: 5px; padding: 4px 4px; border-bottom: 1px solid rgba(0,0,0,0.2); }
+.qa:last-child { border-bottom: none; margin-bottom: 0; }
+.qa-q { font-family: "Noto Sans SC", sans-serif; font-size: 11px; font-weight: 900; line-height: 1.35; margin-bottom: 3px; }
+.qa-q .asker { font-family: "Songti SC", serif; font-weight: 400; color: #c41e1e; font-size: 9.5px; margin-left: 6px; }
+.qa-a { font-family: "Noto Serif SC", serif; font-size: 10px; line-height: 1.5; padding: 1px 0; color: #222; }
+.qa-a b { font-family: "Noto Sans SC", sans-serif; color: #1f2d4a; }
+
+.tomorrow { margin-top: 10px; border: 1.5px solid #000; }
+.tm-banner { background: #1f2d4a; color: #fdfcf8; font-family: "Noto Sans SC", sans-serif; font-size: 11px; font-weight: 900; letter-spacing: 4px; text-align: center; padding: 4px 0; }
+.tm-grid { padding: 8px 12px; gap: 0 14px; align-items: stretch; }
+.tm-text-col { display: flex; flex-direction: column; justify-content: space-around; gap: 8px; padding-right: 18px; border-right: 1px solid rgba(0,0,0,0.3); }
+.tm-tag { font-family: "Old Standard TT", serif; font-size: 10px; letter-spacing: 2px; color: #c41e1e; font-weight: 700; margin-bottom: 3px; }
+.tm-title { font-family: "Noto Sans SC", sans-serif; font-size: 14px; font-weight: 900; letter-spacing: 1px; line-height: 1.3; margin-bottom: 4px; }
+.tm-desc { font-family: "Noto Serif SC", serif; font-size: 10.5px; line-height: 1.55; color: #222; }
+.tm-qr-col { display: flex; flex-direction: column; align-items: center; padding: 4px 0 0 4px; }
+.tm-qr-col img { width: 100%; max-width: 165px; display: block; border: 1.5px solid #000; object-fit: contain; }
+.tm-qr-col figcaption { text-align: center; margin-top: 6px; }
+.qr-title { font-family: "Noto Sans SC", sans-serif; font-size: 12px; font-weight: 900; letter-spacing: 1px; line-height: 1.35; color: #000; }
+.qr-desc { font-family: "Old Standard TT", serif; font-size: 9.5px; letter-spacing: 1px; color: #555; font-style: italic; margin-top: 4px; }
+
+.colophon { margin-top: 10px; padding: 8px 8px 0; border-top: 2px solid #000; display: flex; flex-direction: column; gap: 6px; }
+.colophon-stats { display: grid; grid-template-columns: repeat(5, 1fr); gap: 0 10px; }
+.colophon-stat { text-align: center; border-right: 1px solid rgba(0,0,0,0.2); padding: 0 4px; }
+.colophon-stat:last-child { border-right: none; }
+.colophon-stat .n { font-family: "Playfair Display", serif; font-size: 22px; font-weight: 900; color: #c41e1e; line-height: 1; }
+.colophon-stat .l { font-family: "Old Standard TT", serif; font-size: 9.5px; letter-spacing: 2px; color: #555; margin-top: 3px; text-transform: uppercase; }
+.colophon-quote { text-align: center; padding: 6px 0; border-top: 1px solid rgba(0,0,0,0.2); border-bottom: 1px solid rgba(0,0,0,0.2); }
+.colophon-quote .t { font-family: "Songti SC", "Noto Serif SC", serif; font-size: 14px; font-style: italic; letter-spacing: 4px; line-height: 1.35; color: #000; }
+.colophon-quote .a { font-family: "Old Standard TT", serif; font-size: 10px; letter-spacing: 1.5px; color: #c41e1e; font-weight: 700; margin-top: 4px; }
+.colophon-meta { display: flex; justify-content: space-between; font-family: "Old Standard TT", serif; font-size: 9.5px; letter-spacing: 1.5px; color: #555; text-transform: uppercase; }
+
+.page-foot { margin-top: auto; padding-top: 8px; border-top: 1px solid #000; font-family: "Songti SC", serif; font-size: 10px; letter-spacing: 4px; text-align: center; color: #555; }
+
+</style>
+</head>
+<body>
+
+<section class="page page-1">
+
+  <header class="masthead-row">
+
+    <div class="mh-left">
+      <div class="mh-name-block">
+        <h1 class="mh-name"><span class="mn-r1">夙愿的AI实验室</span><span class="mn-r2">技术汇总</span></h1>
+        <div class="mh-pinyin">SUYUAN AI LAB · TECH ROUNDUP</div>
+      </div>
+      <div class="mh-slogan-block">
+        <div class="mh-slogan-en">A NEWSPAPER FOR ONE WECHAT GROUP</div>
+        <div class="mh-slogan">一个人走得快<br>一群人走得远</div>
+      </div>
+      <div class="mh-tag">AI技术 · 逆向分析 · 部署实战</div>
+    </div>
+
+    <div class="mh-box">
+      <div class="mh-box-line">2026年04月</div>
+      <div class="mh-box-big">01</div>
+      <div class="mh-box-line">周三</div>
+      <div class="mh-box-sep"></div>
+      <div class="mh-box-small">丙午年三月三十至四月廿四</div>
+      <div class="mh-box-small">夙愿的AI实验室群出版</div>
+      <div class="mh-box-small">CN 11-0401</div>
+      <div class="mh-box-small">代号 1-1</div>
+      <div class="mh-box-small">第 0418 期</div>
+      <div class="mh-box-small">今日 6 版</div>
+    </div>
+
+    <div class="mh-right">
+      <div class="mh-kicker">头 版 头 条 · 夙愿的AI实验室 · 技 术 实 录</div>
+      <h2 class="mh-headline">一个实验室，<br>一群技术人，<br>从逆向到部署。</h2>
+      <p class="mh-lead">这是一个技术浓度极高的群聊。从Claude Code的逆向分析到API费用bug的追踪，从Skill安装踩坑到模型选型对比，这里没有闲聊，只有硬核的技术交流。1711条消息、115位技术人，在42天里持续输出。</p>
+    </div>
+
+  </header>
+
+  <div class="grid-12 hero-row p1-hero-row">
+
+    <article class="hero col-span-8 p1-hero">
+      <div class="hero-eyebrow">头 版 独 家 深 度 · EXCLUSIVE REPORT</div>
+      <h3 class="hero-title">四十二天，
+一百一十五人，
+一千七百一十一条消息，
+一场技术人的马拉松</h3>
+      <div class="hero-meta">
+        <span class="time">2026-04-01 → 2026-05-18</span>
+        <span class="badge">记录员</span>
+      </div>
+      <div class="hero-cast"><span class="cast-chip"><span class="avatar avatar-text" style="width:22px;height:22px;line-height:22px;">夙</span><span class="cast-name">夙愿</span></span><span class="cast-chip"><span class="avatar avatar-text" style="width:22px;height:22px;line-height:22px;">q</span><span class="cast-name">qq179369161</span></span><span class="cast-chip"><span class="avatar avatar-text" style="width:22px;height:22px;line-height:22px;">j</span><span class="cast-name">jimmy5257</span></span><span class="cast-chip"><span class="avatar avatar-text" style="width:22px;height:22px;line-height:22px;">w</span><span class="cast-name">wxid_dzsyarbsokqs22</span></span><span class="cast-chip"><span class="avatar avatar-text" style="width:22px;height:22px;line-height:22px;">P</span><span class="cast-name">Peter</span></span></div>
+      <div class="hero-body four-col">
+        <p>逆向分析了一下 Claude code 的源码，做了一个能降低些封号概率的 skill。以及，最近 Claude Code 有个严重的 API 费用 bug。</p><div class="story-break">▼ 技术核心叙事线 ▼</div><p>有一个信息差的问题请教一下， 我做了一个项目， 需要接入openai, gemini的API key, 请问现在市面上是否有正规稳定的平台可以购买API？   。就是模型选择菜单有一个快速模式, 思考深度选择 Medium 或者 High 都可以。</p>
+      </div>
+      <div class="quotes-box"><div class="q">"想问一个弱弱的问题，VS code里的Claude code可以用pro plan的是吧？ 我login了新买的账号，也清除了原有api设置，但是现在聊天返回API reach limit，我都还没开始用[捂脸]。问Claude和Gemin..." <span class="who">— tanneya</span></div><div class="q">"想问一个弱弱的问题，VS code里的Claude code可以用pro plan的是吧？ 我login了新买的账号，也清除了原有api设置，但是现在聊天返回API reach limit，我都还没开始用[捂脸]。问Claude和Gemin..." <span class="who">— tanneya</span></div></div>
+      <div class="produced"><b>PRODUCED ·</b> 逆向Skill / 费用Bug报告 / 模型对比 / 部署方案</div>
+    </article>
+
+    <aside class="side col-span-4 p1-aside">
+
+      <figure class="codex-figure">
+        <img src="" alt="技术讨论截图" style="" />
+        <figcaption>
+          <div class="cf-eyebrow">现 场 直 击 · ON THE SCENE</div>
+          <div class="cf-text">夙愿的AI实验室没有闲聊。凌晨一点有人发逆向分析，早上八点有人汇报API费用bug的追踪结果。这里的技术浓度，足以让一个新手在三周内从入门到能独立部署。</div>
+          <div class="cf-credit">— 夙愿的AI实验室 技术流转截图</div>
+        </figcaption>
+      </figure>
+
+      <div class="side-banner">今 日 花 絮 · 夙愿的AI实验室 边 讯</div>
+      <div class="brief-item"><div class="brief-time">04-01</div><div class="brief-title">逆向首发</div><div class="brief-desc">夙愿发布Claude Code逆向分析Skill，降低封号概率</div></div><div class="brief-item"><div class="brief-time">04-01</div><div class="brief-title">费用Bug曝光</div><div class="brief-desc">Claude Code 2.1.8x版本API消耗翻5-10倍</div></div><div class="brief-item"><div class="brief-time">04-中旬</div><div class="brief-title">模型大乱斗</div><div class="brief-desc">群友实测各模型，对比Claude/GPT/DeepSeek</div></div><div class="brief-item"><div class="brief-time">05-上旬</div><div class="brief-title">部署实战</div><div class="brief-desc">Cloudflare+VPS+Docker一条龙部署讨论</div></div>
+
+      <div class="side-quote">
+        <div class="sq-text">技术交流群</div>
+        <div class="sq-attr">— 夙愿 · 04-01 群公告</div>
+      </div>
+    </aside>
+
+  </div>
+
+  <section class="photo-strip">
+    <div class="ps-banner">今 日 合 影 · TODAY&#x27;S CAST · 夙愿的AI实验室 8 位主演</div>
+    <div class="ps-grid">
+      <div class="ps-item"><span class="ps-avatar avatar-text" style="width:64px;height:64px;line-height:64px;">夙</span><div class="ps-name">夙愿</div><div class="ps-tag">Skill猎人</div></div><div class="ps-item"><span class="ps-avatar avatar-text" style="width:64px;height:64px;line-height:64px;">w</span><div class="ps-name">wxid_dzsyarbsokqs22</div><div class="ps-tag">漏洞猎人</div></div><div class="ps-item"><span class="ps-avatar avatar-text" style="width:64px;height:64px;line-height:64px;">j</span><div class="ps-name">jaymison</div><div class="ps-tag">运维工程师</div></div><div class="ps-item"><span class="ps-avatar avatar-text" style="width:64px;height:64px;line-height:64px;">q</span><div class="ps-name">qq179369161</div><div class="ps-tag">逆向工程师</div></div><div class="ps-item"><span class="ps-avatar avatar-text" style="width:64px;height:64px;line-height:64px;">j</span><div class="ps-name">jimmy5257</div><div class="ps-tag">运维工程师</div></div><div class="ps-item"><span class="ps-avatar avatar-text" style="width:64px;height:64px;line-height:64px;">w</span><div class="ps-name">wxid_rd1ali3ku5b922</div><div class="ps-tag">逆向工程师</div></div><div class="ps-item"><span class="ps-avatar avatar-text" style="width:64px;height:64px;line-height:64px;">w</span><div class="ps-name">wxid_qd4fj1vdvyvf12</div><div class="ps-tag">逆向工程师</div></div><div class="ps-item"><span class="ps-avatar avatar-text" style="width:64px;height:64px;line-height:64px;">l</span><div class="ps-name">lh9856065</div><div class="ps-tag">浏览器黑客</div></div>
+    </div>
+    <div class="ps-caption">2026-04-01 至 2026-05-18 · 夙愿的AI实验室主要参演阵容 · 排名不分先后</div>
+  </section>
+
+  <section class="day-stats">
+    <div class="ds-banner">今 日 数 字 · BY THE NUMBERS · 夙愿的AI实验室 2026-04-01 至 2026-05-18 实 测</div>
+    <div class="ds-grid">
+      <div class="ds-item"><div class="n">1711</div><div class="l">总消息</div></div><div class="ds-item"><div class="n">115</div><div class="l">发言人数</div></div><div class="ds-item"><div class="n">6</div><div class="l">核心话题</div></div><div class="ds-item"><div class="n">9</div><div class="l">新成员</div></div><div class="ds-item"><div class="n">42</div><div class="l">活跃天数</div></div><div class="ds-item"><div class="n">0</div><div class="l">分享链接</div></div><div class="ds-item"><div class="n">8</div><div class="l">技术主题</div></div><div class="ds-item"><div class="n">28K</div><div class="l">总字数</div></div>
+    </div>
+  </section>
+
+  <footer class="page-foot">第 1 版 / 共 6 版 · 头 版 要 闻</footer>
+</section>
+
+<section class="page page-2">
+  
+<header class="page-header">
+  <div class="ph-left">
+    <span class="ph-num">第 2 版</span>
+    <span class="ph-sec">逆 向 工 程 · REVERSE</span>
+  </div>
+  <div class="ph-mid">夙愿的AI实验室 · DAILY</div>
+  <div class="ph-right">
+    <div>2026-04-01</div>
+    <div>VOL. 2026.04.01</div>
+  </div>
+</header>
+
+  <h2 class="page-banner-title">
+    Claude Code逆向·封号攻防<span class="pbt-deck" style="font-size:30px;">从源码分析到设备指纹 / 一个Skill降低封号概率</span>
+    <span class="pbt-en">REVERSE ENGINEERING</span>
+  </h2>
+
+  <div class="grid-12 p2-body">
+
+    <aside class="col-span-4 person-card-col">
+      <div class="pc-eyebrow">本 版 关 键 人 物 · KEY PERSON</div>
+
+      <figure class="person-card-figure">
+        <img src="" alt="夙愿 · 逆向分析者" style="" />
+      </figure>
+
+      <div class="pc-quote-block">
+        <div class="pc-qb-title">夙愿 04-01 录 音 笔 · 三 句 话 把逆向讲清楚</div>
+        <div class="jl-line"><span class="jl-t">00:01</span><span class="jl-q">"逆向分析了一下Claude code的源码，做了一个能降低些封号概率的skill"</span></div><div class="jl-line"><span class="jl-t">00:03</span><span class="jl-q">"如果你用的Claude Code版本是2.1.8x，API消耗量会翻5-10倍"</span></div><div class="jl-line"><span class="jl-t">00:04</span><span class="jl-q">"解决办法是降级到Claude Code 2.1.7x版本"</span></div>
+      </div>
+
+      <div class="pc-caption"><b>图：</b>夙愿作为群主，持续输出Claude Code逆向分析、费用Bug追踪和Skill开发指导，是实验室的技术核心。</div>
+    </aside>
+
+    <article class="hero col-span-8 p2-hero">
+      <div class="hero-eyebrow">本 版 头 条 · LEAD STORY · 主 角 ：夙愿</div>
+      <h3 class="hero-title">逆向Claude Code源码<br><span class="deck">做了一个能降低封号概率的Skill</span></h3>
+      <div class="hero-meta">
+        <span class="time">04-01 00:01 → 04-01 09:40</span>
+        <span class="badge">逆向工程师</span>
+      </div>
+      <div class="hero-cast"><span class="cast-chip"><span class="avatar avatar-text" style="width:22px;height:22px;line-height:22px;">夙</span><span class="cast-name">夙愿</span></span><span class="cast-chip"><span class="avatar avatar-text" style="width:22px;height:22px;line-height:22px;">q</span><span class="cast-name">qq179369161</span></span><span class="cast-chip"><span class="avatar avatar-text" style="width:22px;height:22px;line-height:22px;">j</span><span class="cast-name">jimmy5257</span></span></div>
+
+      <div class="hero-body three-col">
+        <p>逆向分析了一下 Claude code 的源码，做了一个能降低些封号概率的 skill。以及，最近 Claude Code 有个严重的 API 费用 bug。</p>
+      </div>
+
+      <div class="quotes-box"><div class="q">"想问一个弱弱的问题，VS code里的Claude code可以用pro plan的是吧？ 我login了新买的账号，也清除了原有api设置，但是现在聊天返回API reach limit，我都还没开始用[捂脸]。问Claude和Gemin..." <span class="who">— tanneya</span></div></div>
+
+      <div class="produced"><b>PRODUCED ·</b> 防封号Skill / 版本降级方案 / 设备指纹分析</div>
+    </article>
+
+  </div>
+
+  <section class="produced-list">
+    <div class="pl-banner">今 日 产 出 物 · PRODUCED TODAY</div>
+    <div class="grid-12 pl-grid">
+      <div class="col-span-4 pl-item"><div class="pl-no">01</div><div class="pl-text"><b>防封号Skill</b><br>逆向分析Claude Code源码，修改设备指纹降低封号概率</div></div><div class="col-span-4 pl-item"><div class="pl-no">02</div><div class="pl-text"><b>版本降级方案</b><br>2.1.8x API消耗翻10倍，降级到2.1.7x解决</div></div><div class="col-span-4 pl-item"><div class="pl-no">03</div><div class="pl-text"><b>设备指纹分析</b><br>Claude Code记录设备信息，新窗口可绕过限制</div></div>
+    </div>
+  </section>
+
+  <section class="timeline-strip">
+    <div class="ts-banner">时 间 线 · TIMELINE · 逆向攻防全记录</div>
+    <div class="ts-grid">
+      <div class="ts-item"><div class="ts-time">04-01 00:01</div><div class="ts-text">夙愿发布逆向分析：做了降低封号概率的Skill</div><div class="ts-who">— 夙愿</div></div><div class="ts-item"><div class="ts-time">04-01 08:52</div><div class="ts-text">群友报告：防封号Skill似乎已被官方发现</div><div class="ts-who">— 群友</div></div><div class="ts-item"><div class="ts-time">04-01 08:54</div><div class="ts-text">夙愿回应：开一个新窗口应该就行了</div><div class="ts-who">— 夙愿</div></div><div class="ts-item"><div class="ts-time">04-01 09:22</div><div class="ts-text">群友反馈：Claude Code直接说不能帮忙安装这个Skill</div><div class="ts-who">— 群友</div></div><div class="ts-item"><div class="ts-time">04-01 09:26</div><div class="ts-text">夙愿建议：换一个模型，或者开新窗口</div><div class="ts-who">— 夙愿</div></div><div class="ts-item"><div class="ts-time">04-01 09:40</div><div class="ts-text">群友成功：用codex安装成功了</div><div class="ts-who">— 群友</div></div>
+    </div>
+  </section>
+
+  <section class="quote-wall">
+    <div class="qw-banner">群 友 语 录 · QUOTE WALL</div>
+    <div class="qw-grid">
+      <blockquote class="qw-item"><div class="t">"这么厉害！我以前被封过，知道它会记设备"</div><cite>群友 · 04-01 · 逆向首发</cite></blockquote><blockquote class="qw-item"><div class="t">"源码链接还有木有"</div><cite>xiaolong73362 · 04-01 · 求分享</cite></blockquote><blockquote class="qw-item"><div class="t">"我在terminal开CC，安装成功了"</div><cite>群友 · 04-01 · 验证成功</cite></blockquote>
+    </div>
+  </section>
+
+  <footer class="page-foot">第 2 版 / 共 6 版 · 逆 向 工 程</footer>
+</section>
+
+<section class="page page-3">
+  
+<header class="page-header">
+  <div class="ph-left">
+    <span class="ph-num">第 3 版</span>
+    <span class="ph-sec">模 型 战 · MODEL WARS</span>
+  </div>
+  <div class="ph-mid">夙愿的AI实验室 · DAILY</div>
+  <div class="ph-right">
+    <div>2026-04-01</div>
+    <div>VOL. 2026.04.01</div>
+  </div>
+</header>
+
+  <h2 class="page-banner-title">
+    模型选型大乱斗<span class="pbt-deck" style="font-size:26px;">Claude vs GPT vs DeepSeek / 谁是最佳AI搭档</span>
+    <span class="pbt-en">MODEL WARS</span>
+  </h2>
+
+  <figure class="banner-image-top">
+    <img src="" alt="模型对比" style="" />
+    <figcaption>
+      <div class="bit-eyebrow">本 版 头 图 · BANNER IMAGE</div>
+      <div class="bit-title"></div>
+      <div class="bit-text">群里每天都在讨论：这个任务用哪个模型？Claude强在代码，GPT通用性好，DeepSeek性价比高。</div>
+      <div class="bit-credit">— 群内讨论整理</div>
+    </figcaption>
+  </figure>
+
+  <article class="hero hero-full p3-hero">
+    <div class="hero-eyebrow">本 版 头 条 · LEAD STORY · 主 角 ：全体群友</div>
+    <h3 class="hero-title">群友实测各模型<br><span class="deck">从代码能力到性价比，谁是最佳搭档</span></h3>
+    <div class="hero-meta">
+      <span class="time">04-01 → 05-18</span>
+      <span class="badge">模型测评师</span>
+    </div>
+    <div class="hero-cast"><span class="cast-chip"><span class="avatar avatar-text" style="width:22px;height:22px;line-height:22px;">夙</span><span class="cast-name">夙愿</span></span><span class="cast-chip"><span class="avatar avatar-text" style="width:22px;height:22px;line-height:22px;">w</span><span class="cast-name">wxid_dzsyarbsokqs22</span></span><span class="cast-chip"><span class="avatar avatar-text" style="width:22px;height:22px;line-height:22px;">P</span><span class="cast-name">Peter</span></span></div>
+    <div class="hero-body four-col">
+      <p>有一个信息差的问题请教一下， 我做了一个项目， 需要接入openai, gemini的API key, 请问现在市面上是否有正规稳定的平台可以购买API？   。就是模型选择菜单有一个快速模式, 思考深度选择 Medium 或者 High 都可以。</p>
+    </div>
+    <div class="quotes-box"><div class="q">"想问一个弱弱的问题，VS code里的Claude code可以用pro plan的是吧？ 我login了新买的账号，也清除了原有api设置，但是现在聊天返回API reach limit，我都还没开始用[捂脸]。问Claude和Gemin..." <span class="who">— tanneya</span></div></div>
+    <div class="produced"><b>PRODUCED ·</b> 模型选型指南 / 各平台使用经验 / 切换方案</div>
+  </article>
+
+  <section class="timeline-strip">
+    <div class="ts-banner">时 间 线 · TIMELINE · 模型大战全记录</div>
+    <div class="ts-grid">
+      <div class="ts-item"><div class="ts-time">04-01</div><div class="ts-text">Claude Code逆向首发，引发模型安全讨论</div><div class="ts-who">— 夙愿</div></div><div class="ts-item"><div class="ts-time">04-中旬</div><div class="ts-text">群友对比Claude与GPT代码能力，各有所长</div><div class="ts-who">— 群友</div></div><div class="ts-item"><div class="ts-time">04-下旬</div><div class="ts-text">DeepSeek接入讨论，性价比成为焦点</div><div class="ts-who">— 群友</div></div><div class="ts-item"><div class="ts-time">05-上旬</div><div class="ts-text">多模型切换方案：不同任务用不同模型</div><div class="ts-who">— 群友</div></div>
+    </div>
+  </section>
+
+  <section class="letters">
+    <div class="lt-banner">群 友 来 信 · LETTERS</div>
+    <div class="grid-12 lt-grid">
+      <div class="col-span-4 lt-item"><div class="lt-text">"Claude代码能力强但容易封号，GPT稳定但贵，DeepSeek便宜但有时候不太聪明"</div><div class="lt-from">— 群友 · 04-15</div></div><div class="col-span-4 lt-item"><div class="lt-text">"建议新手先用GPT练手，熟悉了再切Claude做复杂任务"</div><div class="lt-from">— 群友 · 04-20</div></div><div class="col-span-4 lt-item"><div class="lt-text">"DeepSeek现在进步很快，有些任务已经不比Claude差多少了"</div><div class="lt-from">— 群友 · 05-05</div></div>
+    </div>
+  </section>
+
+  <section class="lingo">
+    <div class="lg-banner">群 内 黑 话 · LINGO</div>
+    <div class="lg-grid">
+      <div class="lg-item"><div class="w">CC</div><div class="d">Claude Code的简称</div></div><div class="lg-item"><div class="w">封号</div><div class="d">Claude Code账号被封禁</div></div><div class="lg-item"><div class="w">设备指纹</div><div class="d">软件记录的设备标识信息</div></div><div class="lg-item"><div class="w">模型切换</div><div class="d">根据任务需求更换AI模型</div></div>
+    </div>
+  </section>
+
+  <footer class="page-foot">第 3 版 / 共 6 版 · 模 型 战</footer>
+</section>
+
+<section class="page page-3">
+  
+<header class="page-header">
+  <div class="ph-left">
+    <span class="ph-num">第 4 版</span>
+    <span class="ph-sec">费 用 猎 人 · BILL HUNTER</span>
+  </div>
+  <div class="ph-mid">夙愿的AI实验室 · DAILY</div>
+  <div class="ph-right">
+    <div>2026-04-01</div>
+    <div>VOL. 2026.04.01</div>
+  </div>
+</header>
+
+  <h2 class="page-banner-title">
+    Claude Code费用Bug<span class="pbt-deck" style="font-size:30px;">2.1.8x版本API消耗翻5-10倍 / 一个版本号的价值</span>
+    <span class="pbt-en">BUG HUNT</span>
+  </h2>
+
+  <figure class="banner-image-top">
+    <img src="" alt="费用Bug" style="" />
+    <figcaption>
+      <div class="bit-eyebrow">本 版 头 图 · BANNER IMAGE</div>
+      <div class="bit-title"></div>
+      <div class="bit-text">一个版本号的差异，可能让你的API账单翻十倍。夙愿的追踪让群友省下不少冤枉钱。</div>
+      <div class="bit-credit">— 群内讨论整理</div>
+    </figcaption>
+  </figure>
+
+  <article class="hero hero-full p3-hero">
+    <div class="hero-eyebrow">本 版 头 条 · LEAD STORY · 主 角 ：夙愿</div>
+    <h3 class="hero-title">API消耗翻十倍<br><span class="deck">2.1.8x版本的隐藏陷阱</span></h3>
+    <div class="hero-meta">
+      <span class="time">04-01</span>
+      <span class="badge">漏洞猎人</span>
+    </div>
+    <div class="hero-cast"><span class="cast-chip"><span class="avatar avatar-text" style="width:22px;height:22px;line-height:22px;">夙</span><span class="cast-name">夙愿</span></span><span class="cast-chip"><span class="avatar avatar-text" style="width:22px;height:22px;line-height:22px;">w</span><span class="cast-name">wxid_dzsyarbsokqs22</span></span><span class="cast-chip"><span class="avatar avatar-text" style="width:22px;height:22px;line-height:22px;">j</span><span class="cast-name">jerryhe0406</span></span></div>
+    <div class="hero-body four-col">
+      <p>以及，最近 Claude Code 有个严重的 API 费用 bug。如果你用的 Claude Code 版本是 2.1.8x，API 消耗量会翻 5-10 倍。</p>
+    </div>
+    <div class="quotes-box"><div class="q">"想问一个弱弱的问题，VS code里的Claude code可以用pro plan的是吧？ 我login了新买的账号，也清除了原有api设置，但是现在聊天返回API reach limit，我都还没开始用[捂脸]。问Claude和Gemin..." <span class="who">— tanneya</span></div></div>
+    <div class="produced"><b>PRODUCED ·</b> 费用Bug报告 / 版本降级方案 / 账单分析</div>
+  </article>
+
+  <section class="timeline-strip">
+    <div class="ts-banner">时 间 线 · TIMELINE · Bug追踪全记录</div>
+    <div class="ts-grid">
+      <div class="ts-item"><div class="ts-time">04-01 00:02</div><div class="ts-text">夙愿发现：Claude Code 2.1.8x有严重API费用bug</div><div class="ts-who">— 夙愿</div></div><div class="ts-item"><div class="ts-time">04-01 00:03</div><div class="ts-text">API消耗量会翻5-10倍，影响所有用户</div><div class="ts-who">— 夙愿</div></div><div class="ts-item"><div class="ts-time">04-01 00:04</div><div class="ts-text">解决办法：降级到2.1.7x版本</div><div class="ts-who">— 夙愿</div></div><div class="ts-item"><div class="ts-time">04-01 全天</div><div class="ts-text">群友验证并反馈降级成功，API费用恢复正常</div><div class="ts-who">— 群友</div></div>
+    </div>
+  </section>
+
+  <section class="letters">
+    <div class="lt-banner">群 友 来 信 · LETTERS</div>
+    <div class="grid-12 lt-grid">
+      <div class="col-span-4 lt-item"><div class="lt-text">"难怪我这个月账单异常高，原来是版本问题"</div><div class="lt-from">— 群友 · 04-01</div></div><div class="col-span-4 lt-item"><div class="lt-text">"降级后确实正常了，感谢夙愿的及时提醒"</div><div class="lt-from">— 群友 · 04-01</div></div><div class="col-span-4 lt-item"><div class="lt-text">"这种bug官方居然没公告，全靠社区自己发现"</div><div class="lt-from">— 群友 · 04-02</div></div>
+    </div>
+  </section>
+
+  <section class="lingo">
+    <div class="lg-banner">群 内 黑 话 · LINGO</div>
+    <div class="lg-grid">
+      <div class="lg-item"><div class="w">2.1.8x</div><div class="d">Claude Code有Bug的版本号</div></div><div class="lg-item"><div class="w">降级</div><div class="d">回退到旧版本软件</div></div><div class="lg-item"><div class="w">API消耗</div><div class="d">调用API产生的费用</div></div><div class="lg-item"><div class="w">账单异常</div><div class="d">费用明显高于预期</div></div>
+    </div>
+  </section>
+
+  <footer class="page-foot">第 4 版 / 共 6 版 · 费 用 猎 人</footer>
+</section>
+
+<section class="page page-3">
+  
+<header class="page-header">
+  <div class="ph-left">
+    <span class="ph-num">第 5 版</span>
+    <span class="ph-sec">技 能 生 态 · SKILLS</span>
+  </div>
+  <div class="ph-mid">夙愿的AI实验室 · DAILY</div>
+  <div class="ph-right">
+    <div>2026-04-01</div>
+    <div>VOL. 2026.04.01</div>
+  </div>
+</header>
+
+  <h2 class="page-banner-title">
+    Skill生态·安装与定制<span class="pbt-deck" style="font-size:30px;">从SkillHub到ClawHub / 安装踩坑与定制技巧</span>
+    <span class="pbt-en">SKILL ECOSYSTEM</span>
+  </h2>
+
+  <figure class="banner-image-top">
+    <img src="" alt="Skill生态" style="" />
+    <figcaption>
+      <div class="bit-eyebrow">本 版 头 图 · BANNER IMAGE</div>
+      <div class="bit-title"></div>
+      <div class="bit-text">Skill让Claude Code从工具变成平台。群友们不断尝试新Skill，也不断踩坑。</div>
+      <div class="bit-credit">— 群内讨论整理</div>
+    </figcaption>
+  </figure>
+
+  <article class="hero hero-full p3-hero">
+    <div class="hero-eyebrow">本 版 头 条 · LEAD STORY · 主 角 ：全体群友</div>
+    <h3 class="hero-title">Skill安装踩坑实录<br><span class="deck">从安装失败到定制开发</span></h3>
+    <div class="hero-meta">
+      <span class="time">04-01 → 05-18</span>
+      <span class="badge">Skill猎人</span>
+    </div>
+    <div class="hero-cast"><span class="cast-chip"><span class="avatar avatar-text" style="width:22px;height:22px;line-height:22px;">夙</span><span class="cast-name">夙愿</span></span><span class="cast-chip"><span class="avatar avatar-text" style="width:22px;height:22px;line-height:22px;">t</span><span class="cast-name">tanneya</span></span><span class="cast-chip"><span class="avatar avatar-text" style="width:22px;height:22px;line-height:22px;">w</span><span class="cast-name">wxid_2efzg9spxfwv22</span></span></div>
+    <div class="hero-body four-col">
+      <p>逆向分析了一下 Claude code 的源码，做了一个能降低些封号概率的 skill。我安装成功了，但是重启了claudecode后，显示 API Error: Unable to connect to A。</p>
+    </div>
+    <div class="quotes-box"><div class="q">"这个情况下怎么办？答案是让 AI 设计方案的时候联网搜索最新的方案，查一下类似 skillhub、GitHub 等平台别人是如何解决这个问题的" <span class="who">— 夙愿</span></div></div>
+    <div class="produced"><b>PRODUCED ·</b> Skill安装指南 / 定制开发经验 / 踩坑合集</div>
+  </article>
+
+  <section class="timeline-strip">
+    <div class="ts-banner">时 间 线 · TIMELINE · Skill生态全记录</div>
+    <div class="ts-grid">
+      <div class="ts-item"><div class="ts-time">04-01</div><div class="ts-text">防封号Skill发布，引发安装讨论</div><div class="ts-who">— 夙愿</div></div><div class="ts-item"><div class="ts-time">04-中旬</div><div class="ts-text">群友尝试各种Skill，反馈安装问题</div><div class="ts-who">— 群友</div></div><div class="ts-item"><div class="ts-time">04-下旬</div><div class="ts-text">SkillHub和ClawHub使用经验分享</div><div class="ts-who">— 群友</div></div><div class="ts-item"><div class="ts-time">05-上旬</div><div class="ts-text">System Prompt定制讨论</div><div class="ts-who">— 群友</div></div>
+    </div>
+  </section>
+
+  <section class="letters">
+    <div class="lt-banner">群 友 来 信 · LETTERS</div>
+    <div class="grid-12 lt-grid">
+      <div class="col-span-4 lt-item"><div class="lt-text">"有些Skill安装后冲突，需要排查依赖"</div><div class="lt-from">— 群友 · 04-15</div></div><div class="col-span-4 lt-item"><div class="lt-text">"Claude Code有时候拒绝安装Skill，换模型或新窗口试试"</div><div class="lt-from">— 夙愿 · 04-01</div></div><div class="col-span-4 lt-item"><div class="lt-text">"自己写System Prompt比用别人的更稳定"</div><div class="lt-from">— 群友 · 05-08</div></div>
+    </div>
+  </section>
+
+  <section class="lingo">
+    <div class="lg-banner">群 内 黑 话 · LINGO</div>
+    <div class="lg-grid">
+      <div class="lg-item"><div class="w">Skill</div><div class="d">Claude Code的扩展技能</div></div><div class="lg-item"><div class="w">SkillHub</div><div class="d">Skill分享和安装平台</div></div><div class="lg-item"><div class="w">ClawHub</div><div class="d">另一个Skill管理平台</div></div><div class="lg-item"><div class="w">System Prompt</div><div class="d">自定义AI行为的系统提示词</div></div>
+    </div>
+  </section>
+
+  <footer class="page-foot">第 5 版 / 共 6 版 · 技 能 生 态</footer>
+</section>
+
+<section class="page page-4">
+  
+<header class="page-header">
+  <div class="ph-left">
+    <span class="ph-num">第 6 版</span>
+    <span class="ph-sec">人 物 附 录 · CAST</span>
+  </div>
+  <div class="ph-mid">夙愿的AI实验室 · DAILY</div>
+  <div class="ph-right">
+    <div>2026-04-01</div>
+    <div>VOL. 2026.04.01</div>
+  </div>
+</header>
+
+  <h2 class="page-banner-title">
+    技术主演<span class="pbt-deck" style="font-size:36px;">没有这些人，Bug没人报，坑没人踩</span>
+    <span class="pbt-en">CAST OF THE LAB</span>
+  </h2>
+
+  <section class="hl-grid">
+    
+<div class="hl">
+  <span class="hl-avatar avatar-text" style="width:56px;height:56px;line-height:56px;">夙</span>
+  <div class="hl-info">
+    <div class="hl-name">夙愿</div>
+    <div class="hl-tag">Skill猎人</div>
+    <div class="hl-desc">在 30 个技术话题中高频出没，贡献了多个关键视角和解决方案。</div>
+  </div>
+</div>
+<div class="hl">
+  <span class="hl-avatar avatar-text" style="width:56px;height:56px;line-height:56px;">w</span>
+  <div class="hl-info">
+    <div class="hl-name">wxid_dzsyarbsokqs22</div>
+    <div class="hl-tag">漏洞猎人</div>
+    <div class="hl-desc">在 12 个技术话题中高频出没，贡献了多个关键视角和解决方案。</div>
+  </div>
+</div>
+<div class="hl">
+  <span class="hl-avatar avatar-text" style="width:56px;height:56px;line-height:56px;">j</span>
+  <div class="hl-info">
+    <div class="hl-name">jaymison</div>
+    <div class="hl-tag">运维工程师</div>
+    <div class="hl-desc">在 8 个技术话题中高频出没，贡献了多个关键视角和解决方案。</div>
+  </div>
+</div>
+<div class="hl">
+  <span class="hl-avatar avatar-text" style="width:56px;height:56px;line-height:56px;">q</span>
+  <div class="hl-info">
+    <div class="hl-name">qq179369161</div>
+    <div class="hl-tag">逆向工程师</div>
+    <div class="hl-desc">在 7 个技术话题中高频出没，贡献了多个关键视角和解决方案。</div>
+  </div>
+</div>
+<div class="hl">
+  <span class="hl-avatar avatar-text" style="width:56px;height:56px;line-height:56px;">j</span>
+  <div class="hl-info">
+    <div class="hl-name">jimmy5257</div>
+    <div class="hl-tag">运维工程师</div>
+    <div class="hl-desc">在 7 个技术话题中高频出没，贡献了多个关键视角和解决方案。</div>
+  </div>
+</div>
+<div class="hl">
+  <span class="hl-avatar avatar-text" style="width:56px;height:56px;line-height:56px;">w</span>
+  <div class="hl-info">
+    <div class="hl-name">wxid_rd1ali3ku5b922</div>
+    <div class="hl-tag">逆向工程师</div>
+    <div class="hl-desc">在 6 个技术话题中高频出没，贡献了多个关键视角和解决方案。</div>
+  </div>
+</div>
+<div class="hl">
+  <span class="hl-avatar avatar-text" style="width:56px;height:56px;line-height:56px;">w</span>
+  <div class="hl-info">
+    <div class="hl-name">wxid_qd4fj1vdvyvf12</div>
+    <div class="hl-tag">逆向工程师</div>
+    <div class="hl-desc">在 6 个技术话题中高频出没，贡献了多个关键视角和解决方案。</div>
+  </div>
+</div>
+<div class="hl">
+  <span class="hl-avatar avatar-text" style="width:56px;height:56px;line-height:56px;">l</span>
+  <div class="hl-info">
+    <div class="hl-name">lh9856065</div>
+    <div class="hl-tag">浏览器黑客</div>
+    <div class="hl-desc">在 6 个技术话题中高频出没，贡献了多个关键视角和解决方案。</div>
+  </div>
+</div>
+  </section>
+
+  <div class="appendix-bar">附 录 · APPENDIX · 技 术 资 料 馆</div>
+
+  <div class="grid-12 appendix-grid">
+    <div class="col-span-6 appendix-col">
+      <h3 class="apx-title">可 抄 作 业 的 工 作 流 · SOP</h3>
+      
+<div class="sop">
+  <div class="sop-title">Claude Code逆向·封号攻防战指南</div>
+  <div class="sop-meta">andy2546 · 14:30</div>
+  <ol class="sop-steps"><li>这个思路非常真实有效，我自己的工作中，做严肃研究的时候，前期发现AI只能做一点零散的工作。中期打磨提示词建立提示词积木库，分任务的给提示词实现了AI承担单项工作</li></ol>
+  <div class="sop-out"><b>OUTPUT ·</b> 群内经验分享</div>
+</div>
+<div class="sop">
+  <div class="sop-title">模型选型·谁是最佳搭档指南</div>
+  <div class="sop-meta">andy2546 · 14:30</div>
+  <ol class="sop-steps"><li>这个思路非常真实有效，我自己的工作中，做严肃研究的时候，前期发现AI只能做一点零散的工作。中期打磨提示词建立提示词积木库，分任务的给提示词实现了AI承担单项工作</li></ol>
+  <div class="sop-out"><b>OUTPUT ·</b> 群内经验分享</div>
+</div>
+    </div>
+    <div class="col-span-6 appendix-col">
+      <h3 class="apx-title">群 内 Q&amp;A 沉 淀 · Q&amp;A</h3>
+      
+<div class="qa">
+  <div class="qa-q">Q：想问一个弱弱的问题，VS code里的Claude code可以用pro plan的是吧？ 我login了新买的账号，也...
+    <span class="asker">— tanneya</span></div>
+  <div class="qa-a"><b>andy2546：</b>这个思路非常真实有效，我自己的工作中，做严肃研究的时候，前期发现AI只能做一点零散的工作。中期打磨提示词建立提示词积木库，分任务的给提示词实现了AI承担单项工作</div><div class="qa-a"><b>wxid_qd4fj1vdvyvf12：</b>不管是VScode还是cc的桌面端，都安装不了，不过miniMax帮我安装了。。。</div>
+</div>
+<div class="qa">
+  <div class="qa-q">Q：有一个信息差的问题请教一下， 我做了一个项目， 需要接入openai, gemini的API key, 请问现在市面上是...
+    <span class="asker">— Peter</span></div>
+  <div class="qa-a"><b>wxid_dzsyarbsokqs22：</b>就是模型选择菜单有一个快速模式, 思考深度选择 Medium 或者 High 都可以</div><div class="qa-a"><b>夏至小姐：</b>请问下fast如何启动呢？我的客户端（win）好像只能看到模型选择和思考深度选择。通常思考越深就越慢</div>
+</div>
+    </div>
+  </div>
+
+  <section class="tomorrow tomorrow-with-qr">
+    <div class="tm-banner">明 日 预 告 · TOMORROW · 下 期 见</div>
+    <div class="grid-12 tm-grid">
+      <div class="col-span-8 tm-text-col">
+        <div class="tm-item"><div class="tm-tag">技术</div><div class="tm-title">Claude Code新版本追踪</div><div class="tm-desc">持续关注版本更新和Bug修复</div></div><div class="tm-item"><div class="tm-tag">工具</div><div class="tm-title">更多Skill开发</div><div class="tm-desc">从使用到开发，共建Skill生态</div></div><div class="tm-item"><div class="tm-tag">部署</div><div class="tm-title">生产环境部署</div><div class="tm-desc">从本地到云端，完整部署方案</div></div><div class="tm-item"><div class="tm-tag">逆向</div><div class="tm-title">更多逆向分析</div><div class="tm-desc">深入理解AI工具的工作原理</div></div>
+      </div>
+      <figure class="col-span-4 tm-qr-col">
+        <img src="" alt="社群二维码" />
+        <figcaption>
+          <div class="qr-title">加入<br>夙愿的AI实验室</div>
+          <div class="qr-desc">扫码加入，一起逆向、部署、赚钱</div>
+        </figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <footer class="colophon">
+    <div class="colophon-stats">
+      <div class="colophon-stat"><div class="n">1711</div><div class="l">Messages</div></div>
+      <div class="colophon-stat"><div class="n">115</div><div class="l">People</div></div>
+      <div class="colophon-stat"><div class="n">28,105</div><div class="l">Characters</div></div>
+      <div class="colophon-stat"><div class="n">6</div><div class="l">Stories</div></div>
+      <div class="colophon-stat"><div class="n">+9</div><div class="l">Newcomer</div></div>
+    </div>
+    <div class="colophon-quote">
+      <div class="t">"DeepSeek-V4 预览版：迈入百万上下文普惠时代(https://mp.weixin.qq.com/s/8bxXqS2R8Fx5-1TLDBiEDg?sc"</div>
+      <div class="a">— 夙愿 · 10:59</div>
+    </div>
+    <div class="colophon-meta">
+      <span>夙愿的AI实验室 · 2026-04-01</span>
+      <span>2026-04-01 → 2026-05-18</span>
+      <span>本期完 · 明日续</span>
+    </div>
+  </footer>
+
+  <footer class="page-foot">第 6 版 / 共 6 版 · 人 物 附 录</footer>
+</section>
+
+</body>
+</html>
